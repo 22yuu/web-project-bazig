@@ -16,6 +16,7 @@
 <!-- stylesheet -->
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 <link rel="stylesheet" type="text/css" href="css/lightslider.css">
+<link rel="stylesheet" href="css/loginForm.css">
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -24,6 +25,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script>
+$(document).ready(function(){
+
+	$(".login").on('click', function(){
+		$(".popup").show();
+		$(".dim").show();
+		});
+	$(".popup .close").on('click', function(){
+		$(this).parent().hide();
+		$(".dim").hide();
+		});
+});
+</script>
 </head>
 <body>
 	<div class="app">
@@ -50,7 +64,7 @@
 					<a href="#" target="_blank">입점문의</a> |
 					<a href="#">장바구니</a> |
 					<a href="#">마이페이지</a> |
-					<a href="#">로그인</a> |
+					<a class="login" href="#">로그인</a> |
 				</div>
 			</div>
 		</div>
@@ -988,4 +1002,35 @@
 <!-- script-link -->
 <script type="text/javascript" src="js/script.js"></script>
 </body>
+
+<div class="popup">
+	<header class="header">
+		<h2>로그인</h2>
+		<p> 다양한 할인 혜택과 이벤트, 보너스 쿠폰을 놓치지 마세요 </p>
+	</header>
+	<button class="kakao-login-btn"><img src="images/kakao-icon.png"> 카카오로 로그인 </button>
+		
+	<div class="divider">
+		<hr>
+	</div>
+	<div class="input-wrapper">
+		<label>이메일<span>*</span></label>
+		<input class="email-input" type="email">
+	</div>	
+	<div class="input-wrapper">
+		<label>비밀번호<span>*</span></label>
+		<input class="password-input" type="password">
+	</div>
+	<div class="input-wrapper">
+		<input type="checkbox" id="chk1"><label for="chk1_1">로그인 상태 유지</label>
+		<a href="#" class="forgotten-password">비밀번호를 잊으셨나요?</a>
+	</div>
+	<button  class="login-btn">로그인</button>
+	<button  class="member-btn">멤버십 가입하기</button>
+	<a href="#" class="membership-info">멤버십 정보</a>
+	<a href="#a" class="close"></a>
+</div>
+
+<div class="dim"></div>
+
 </html>

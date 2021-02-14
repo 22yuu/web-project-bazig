@@ -174,7 +174,6 @@
 
 .box {
 	width:300px;
-	box-shadow: 2px 2px 30px rgba(0, 0,0, 0.2);
 	overflow: hidden;
 }
 
@@ -270,6 +269,7 @@
 	background-color: #ffffff;
 	color: #252525;
 	font-weight: 700;
+	font-size:16px;
 	letter-spacing: 1px;
 	font-family: calibri;
 	border-radius: 20px;
