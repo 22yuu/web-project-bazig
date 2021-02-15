@@ -1020,13 +1020,13 @@ $(document).ready(function(){
 	<div class="input-wrapper">
 		<label>비밀번호<span>*</span></label>
 		<input class="password-input" type="password">
-	</div>
+	</div> 
 	<div class="input-wrapper">
 		<input type="checkbox" id="chk1"><label for="chk1_1">로그인 상태 유지</label>
 		<a href="#" class="forgotten-password">비밀번호를 잊으셨나요?</a>
 	</div>
 	<button  class="login-btn">로그인</button>
-	<button  class="member-btn">멤버십 가입하기</button>
+	<button  id="btn-join" class="member-btn" onclick="location.href='joinForm'">멤버십 가입하기</button>
 	<a href="#" class="membership-info">멤버십 정보</a>
 	<a href="#a" class="close"></a>
 </div>
