@@ -1,29 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>BAZIG</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA_Compatible" content="IE=chrome">
-  
-<!-- page-icon -->
-<link rel="shortcut icon" href="images/logo.png">
-
-<!-- stylesheet -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-<!-- stylesheet -->
-<link rel="stylesheet" type="text/css" href="/css/common.css">
-<link rel="stylesheet" type="text/css" href="css/lightslider.css">
-<link rel="stylesheet" href="css/loginForm.css">
-
-<!-- js -->
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/lightslider.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<%@ include file="layout/header.jsp" %>
 
 <script>
 $(document).ready(function(){
@@ -36,58 +12,24 @@ $(document).ready(function(){
 		$(this).parent().hide();
 		$(".dim").hide();
 		});
+
+	$(function() {
+		$("#best_item_nav_menus li").mouseenter(function(event) {
+ 			$(this).find("div").parent().css("background", "#FFF");
+			$(this).find("div").parent().children("a").css("color", "#000");
+			$(this).find("div").slideDown("fast"); 
+		}).mouseleave(function() {
+			$(this).find("div:visible").slideUp(50, function() {
+				// #menubar-menus li:hover 처리를 하지 않을 경우 아래 라인 활성,
+			});
+		});
+	});
 });
+
+
 </script>
 </head>
 <body>
-	<div class="app">
-	<!-- Header -->
-		<div id="header">
-			<!-- top-banner -->
-			<div class="top-banner">
-				애드센스
-			</div>
-			<!-- Main logo, search-bar, upper menu -->
-			<div class="frame">
-				<div class="main-logo-area">
-					<h1 class="main-logo"><a href="/"><img src="images/logo.png" alt="BAZIG"></a></h1>
-				</div>
-				<div class="search-bar-area">
-					<form>
-						<input type="text" name="q" id="search_input" class="search_input">
-						<button class="search_button"> </button>
-					</form>
-				</div>
-				
-				<div class="upper-menu-area">
-					<a href="#" target="_blank">베이직소개</a> |
-					<a href="#" target="_blank">입점문의</a> |
-					<a href="#">장바구니</a> |
-					<a href="#">마이페이지</a> |
-					<a class="login" href="#">로그인</a> |
-				</div>
-			</div>
-		</div>
-		
-		<!-- nav -->
-		<div id="nav">
-			<div class="frame">
-				<div class="swiper-container">
-					<ul class="swiper-container-wrapper">
-						<li id="nav_home" class="swiper-slide-active"> <a href="/"> <span> 홈 </span> </a>
-						<li id="nav_brand" class="swiper-slide-active"> <a href="#"> <span> 브랜드 </span> </a>
-						<li id="nav_shoppingMall" class="swiper-slide-active"> <a href="#"> <span> 쇼핑몰 </span> </a>
-						<li id="nav_life" class="swiper-slide-active"> <a href="#"> <span> 라이프 </span> </a>
-						<li id="nav_highend" class="swiper-slide-active"> <a href="#"> <span> 하이엔드 </span> </a>
-						<li id="nav_exhibitions" class="swiper-slide-active"> <a href="#"> <span> 기획전 </span> </a>
-						<li id="nav_store" class="swiper-slide-active"> <a href="#"> <span> 스토어 </span> </a>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--  end navigation -->
-	<!-- end header -->
-	
 	<!-- Main banner, Sub banner -->
 	<div id="main_banner_frame">
 		<div id="inner_main_div">
@@ -101,17 +43,31 @@ $(document).ready(function(){
 	</div>
 
 	<!-- Best items Slider -->
-	 <div id="best_item_frame">
+	<div id="best_item_frame">
 	 	<span style="font-size:32px">BEST</span>
 	 	<div class="best_item_nav">
-	 		<ul class="best_item_nav_menu">
-					<li id="best_item_nav" class="swiper-slide-active"> <a href="#"> <span> BAZIG1 </span> </a>
-					<li id="best_item_nav" class="swiper-slide-active"> <a href="#"> <span> BAZIG2 </span> </a>
-					<li id="best_item_nav" class="swiper-slide-active"> <a href="#"> <span> BAZIG3 </span> </a>
-					<li id="best_item_nav" class="swiper-slide-active"> <a href="#"> <span> BAZIG4 </span> </a>
-					<li id="best_item_nav" class="swiper-slide-active"> <a href="#"> <span> BAZIG5 </span> </a>
-					<li id="best_item_nav" class="swiper-slide-active"> <a href="#"> <span> BAZIG6 </span> </a>
-					<li id="best_item_nav" class="swiper-slide-active"> <a href="#"> <span> BAZIG7 </span> </a>
+	 		<ul id="best_item_nav_menus" class="best_item_nav_menu">
+				<li> <a href="#"> <span> BEST1 </span> </a>
+					 <div><p>Sub menu 1</div>
+				</li>
+				<li> <a href="#"> <span> BEST2 </span> </a>
+					 <div><p>Sub menu 2</div>
+				</li>
+				<li> <a href="#"> <span> BEST3 </span> </a>
+					 <div><p>Sub menu 3</div>
+				</li>
+				<li> <a href="#"> <span> BEST4 </span> </a>
+					 <div><p>Sub menu 4</div>
+				</li>
+				<li> <a href="#"> <span> BEST5 </span> </a>
+					 <div><p>Sub menu 5</div>
+				</li>
+				<li> <a href="#"> <span> BEST6 </span> </a>
+					 <div><p>Sub menu 6</div>
+				</li>
+				<li> <a href="#"> <span> BEST7 </span> </a>
+					 <div><p>Sub menu 7</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -965,72 +921,40 @@ $(document).ready(function(){
 			</ul>
 		</section>
 	</div>
-	<!-- Footer -->
-	<footer>
-	<div id="footer">
-		<div class="footer_sec_1">
-			<span>BAZIG에서 판매하는 모든 브랜드 상품은 <b>정식제조, 정식 수입 절차를 통해 유통되는 100% 정품임</b>을 보증합니다.</span>
-			<a href="#"> 입점문의 </a>
-			<a href="#"> 이용약관 </a>
-			<a href="#"> 개인정보처리방침 </a>
-	
-		
-		</div>
-		
-		<div class="footer_sec_2">
-				1544-8998<br>
-				<span>평일 09 : 00 ~ 18 : 00 | 공휴일휴무</span>
-				<a href="https://m.facebook.com/BAZIG-111005253850108/" target="_blank"> <img src="/images/facebook_logo.png"></a>
-				<a href="https://www.instagram.com/bazig_official/" target="_blank"> <img src="/images/instagram_logo.png"></a>
-			
-			<div class="footer_sec_3">
-				<p>
-				OMPANY. (주)트렉시 OWNER. 강부석 TEL. 070-883-1201 PRIVACY MANAGER. 박현진(HYUNJIN@TREXI.CO.KR) <br>
-				ADDRESS. 04083 서울특별시 마포구 성지길 45 (합정동) 2층 <br>
-				BUSINESS LICENSE. 12-886-40473 [사업자정보확인] MALL ORDER LICENSE. 2018-서울마포-2209호 <br>
-				COPYRIGHTⓒ(주)트렉시 ALL RIGHTS RESERVED.
-				</p>
-			</div>
-		</div>
-	</div>
-	</footer>
-	
-	
-	
-	</div>
-	
+
+<%@ include file="layout/footer.jsp" %>
 <!-- script-link -->
 <script type="text/javascript" src="js/script.js"></script>
 </body>
-
 <div class="popup">
 	<header class="header">
 		<h2>로그인</h2>
 		<p> 다양한 할인 혜택과 이벤트, 보너스 쿠폰을 놓치지 마세요 </p>
-	</header>
-	<button class="kakao-login-btn"><img src="images/kakao-icon.png"> 카카오로 로그인 </button>
-		
-	<div class="divider">
+		<button class="kakao-login-btn"><img src="images/kakao-icon.png"> 카카오로 로그인 </button>
+		<button class="naver-login-btn">네이버로 로그인 </button>
+		<button class="google-login-btn">구글로 로그인 </button>
 		<hr>
+	</header>
+	<div class="content">
+		<div class="input-wrapper">
+			<label>아이디<span>*</span></label>
+			<input class="member-id-input" type="text" id="memberId">
+		</div>	
+		<div class="input-wrapper">
+			<label>비밀번호<span>*</span></label>
+			<input class="password-input" type="password" id="pwd">
+		</div> 
+		<div class="input-wrapper">
+			<input type="checkbox" id="chk1"><label for="chk1_1">로그인 상태 유지</label>
+			<a href="#" class="forgotten-password">비밀번호를 잊으셨나요?</a>
+		</div>
 	</div>
-	<div class="input-wrapper">
-		<label>이메일<span>*</span></label>
-		<input class="email-input" type="email">
-	</div>	
-	<div class="input-wrapper">
-		<label>비밀번호<span>*</span></label>
-		<input class="password-input" type="password">
-	</div> 
-	<div class="input-wrapper">
-		<input type="checkbox" id="chk1"><label for="chk1_1">로그인 상태 유지</label>
-		<a href="#" class="forgotten-password">비밀번호를 잊으셨나요?</a>
-	</div>
-	<button  class="login-btn">로그인</button>
+	<button  type="submit" class="login-btn">로그인</button>
 	<button  id="btn-join" class="member-btn" onclick="location.href='joinForm'">멤버십 가입하기</button>
 	<a href="#" class="membership-info">멤버십 정보</a>
-	<a href="#a" class="close"></a>
+	<a href="#" class="close"></a>
 </div>
 
 <div class="dim"></div>
-
+<script type="text/javascript" src="js/user.js"></script>
 </html>

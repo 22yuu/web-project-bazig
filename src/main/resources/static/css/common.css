@@ -10,6 +10,11 @@
 .app a {
 	text-decoration: none;
 }
+
+.app ul li {
+	list-style: none;
+}
+
 /* Header */
 
 /* top-banner css */
@@ -104,11 +109,28 @@
 }
 
 /* navigation */
-#nav .frame { width:100%; clear:both; overflow: hidden; padding: 0px 30px; margin: 0 auto; background-color: #343A40;}
-#nav .frame .swiper-container { margin-left: auto; margin-right: auto; position:relative; overflow: hidden; list-style: none; padding:0; z-index:1;}
-#nav .frame .swiper-container .swiper-container-wrapper { margin:0px; padding:0px; list-style: none; position: relative; width: 100%; height: 100%; z-index:1; display: flex; }
-#nav ul li { margin: 0px; list-style: none; flex-shrink: 0; height: 100%; position: relative; transition-property: transform, -webkit-transform; width: 14.2%!important; padding: 18px 0; }
-#nav ul li a { font-size: 14px; display: block; min-width: 40px; margin: 0 6px; color: #fff;}
+#nav { width: 100%; padding: 0px 30px; background: #343A40;}
+#main-nav-wrapper {
+	width: 100%; margin: 0 auto; list-style: none; padding: 0; text-align: center; font-size: 0; display: table;
+}
+#main-nav-wrapper > li { 
+	width: 200px; display: table-cell; vertical-align: middle; text-align: center; font-size: 14px; padding: 18px 0;
+}
+
+#main-nav-wrapper > li > a { display: table-cell; vertical-align: middle; width: 200px; height:40px; text-decoration: none; color: #FFF;
+	/* 서브 메뉴 영역이 가로 방향으로 100% 보이는 것을 원치 않을 때 아래 라인을 활성 */
+	/*position: relative;*/
+}
+/* #main-nav-wrapper > li > div {
+	position: absolute; background: rgba(52,58,64,0.25); color:#222; left: 0; width: 100%; top: auto; display: none;
+	padding: 18px 0; z-index: 10;
+} */
+
+#sub-nav { border:3px solid #222;}
+#sub-nav-wrapper > li > div {
+	position: absolute; background: rgba(52,58,64,0.25); color:#222; left: 0; width: 100%; top: auto; display: none;
+	padding: 18px 0; z-index: 10;
+}
 /* End Header */
 
 /* Main Banner and Sub banner area */
@@ -141,7 +163,7 @@
 #best_item_frame {
 	text-align: left;
 	width: 100%;
-	max-width: 1300px;
+	max-width: 1100px;
 	margin: 0px auto;
 	clear: both;
 	padding: 150px 0px 0px 0px;
@@ -153,8 +175,9 @@
 
 /* best item navigation */
 .best_item_nav {
-	border-top: 3px solid black;
-	border-bottom: 3px solid gray;
+ 	border-top: 3px solid #222;
+	border-bottom: 3px solid #ddd;
+	text-align: center;
 	margin-left: auto; 
 	margin-right: auto; 
 	position:relative; 
@@ -166,12 +189,15 @@
 }
 
 .best_item_nav_menu { margin:0px; padding:0px; list-style: none; position: relative; width: 100%; height: 100%; z-index:1; display: flex; }
+.best_item_nav_menu > li { margin: 0px; list-style: none; flex-shrink: 0; width:100%; height: 100%; position: relative; transition-property: transform, -webkit-transform; width: 14.2%!important; padding: 18px 0; }
+.best_item_nav_menu > li > a {font-size: 16px; display: block; min-width: 40px; margin: 0 6px; color: black; }
 
-#best_item_frame ul li { margin: 0px; list-style: none; flex-shrink: 0; width:100%; height: 100%; position: relative; transition-property: transform, -webkit-transform; width: 14.2%!important; padding: 18px 0; }
-#best_item_frame ul li a { font-size: 16px; display: block; min-width: 40px; margin: 0 6px; color: black;}
+/*.best-item-sub-menu { display: none;}*/
+.best_item_nav_menu > li { border-bottom : none;}
+.best_item_nav_menu > li > div { width:100%; height:100%;top: auto; left:0; background:rgba(255,255,255, 0.25); border:1px solid #222; display:none; padding: 50px 0; z-index:999;}
+
 
 /* best item slider */
-
 .box {
 	width:300px;
 	overflow: hidden;
@@ -236,18 +262,7 @@
 .origin-price {
 	color: #969696;
 }
-.overlay {
-	position: absolute;
-	left : 50%;
-	top : 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	height: 100%;
-	background-color: rgba(92,95,236, 0.6);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+
 .overlay{
 	position: absolute;
 	left:50%;
@@ -384,6 +399,7 @@
 .new_item_nav {
 	border-top: 3px solid black;
 	border-bottom: 3px solid gray;
+	text-align: center;
 	margin-left: auto; 
 	margin-right: auto; 
 	position:relative; 
