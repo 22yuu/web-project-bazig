@@ -11,8 +11,8 @@
         cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',
         easing: 'linear', //'for jquery animation',//
         speed: 400, //ms'
-        auto: false,
-        pauseOnHover: false,
+        auto: true,
+        pauseOnHover: true,
         loop: false,
         slideEndAnimation: true,
         pause: 2000,
@@ -31,7 +31,7 @@
         galleryMargin: 5,
         thumbMargin: 5,
         currentPagerPosition: 'middle',
-        enableTouch: true,
+        enableTouch: false,
         enableDrag: true,
         freeMove: true,
         swipeThreshold: 40,

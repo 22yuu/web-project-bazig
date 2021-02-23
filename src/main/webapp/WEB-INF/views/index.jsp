@@ -79,31 +79,24 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/1.jpg" alt="1">
-				<!-- overlayer -->
 				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
+					<div class="slide-img"><a><img></a></div>
 				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -112,31 +105,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/2.jpg" alt="2">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
-				<!-- detail-box -->
+				<div class="slide-img"><a><img></a></div>
+								<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -145,31 +129,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/3.jpg" alt="3">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><a><img></a></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -178,31 +153,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/4.jpg" alt="4">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><a><img></a></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -211,31 +177,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/5.jpg" alt="5">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -244,35 +201,26 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/6.jpg" alt="6">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
-			</ul>
+		</ul>
 		</section>
 	</div>
 	
@@ -284,31 +232,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/1.jpg" alt="1">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -317,31 +256,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/2.jpg" alt="2">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -350,31 +280,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/3.jpg" alt="3">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -383,31 +304,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/4.jpg" alt="4">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -416,31 +328,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/5.jpg" alt="5">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -449,31 +352,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/6.jpg" alt="6">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -725,31 +619,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/1.jpg" alt="1">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -758,31 +643,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/2.jpg" alt="2">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -791,31 +667,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/3.jpg" alt="3">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -824,31 +691,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/4.jpg" alt="4">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -857,31 +715,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/5.jpg" alt="5">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -890,31 +739,22 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img">
-				<img src="images/best_item/6.jpg" alt="6">
-				<!-- overlayer -->
-				<div class="overlay">
-				<!-- -buy-btn -->
-				<a href="#" class="buy-btn">Buy Now</a>
-				</div>
-				</div>
+				<div class="slide-img"><img></div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
-				<a href="#">
-						ETIAM ERAT VELT <br>
-						<span>
-							SCELERISQ<br>
-							UE IN DICTUM NON<br>
-							CONSECTETUR A EART.<br>
-						<span>
-						<div class="detail-price">
-							<del class="origin-price">69,000원 <br></del> 
-							<strong class="current-price">39,000원</strong>
-						</div>
-						<div class="discount-percent"> 42% </div>
-					</a>
+				<ul>
+					<li class="prd-name">ETIAM ERAT VELT</li>
+					<li class="sub-name">SCELERISQ</li>
+					<li class="prd-info">UE IN DICTUM NON<br>
+										 CONSECTETUR A EART.<br></li>
+					<li class="detail-price">
+						<del class="origin-price">69,000원 <br></del> 
+						<strong class="current-price">39,000원 </strong>
+					</li>
+					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+				</ul>
 				</div>
 				</div>
 			  </li>
@@ -926,6 +766,7 @@ $(document).ready(function(){
 <!-- script-link -->
 <script type="text/javascript" src="js/script.js"></script>
 </body>
+
 <div class="popup">
 	<header class="header">
 		<h2>로그인</h2>
