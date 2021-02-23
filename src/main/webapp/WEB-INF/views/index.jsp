@@ -30,6 +30,19 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<%-- <%
+     try {
+        int checkPermit = (int)pageContext.getSession().getAttribute("permit");
+        if (checkPermit != 1)
+        {
+           response.sendRedirect("testLogin.jsp");
+        }
+     } catch (Exception e) {
+        response.sendRedirect("testLogin.jsp");
+     } finally {
+        
+     }
+  %> --%>
 	<!-- Main banner, Sub banner -->
 	<div id="main_banner_frame">
 		<div id="inner_main_div">
