@@ -21,3 +21,8 @@ $(document).ready(function() {
         } 
     });
  });
+
+// 찜하기
+
+
+

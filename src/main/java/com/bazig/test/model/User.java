@@ -32,7 +32,10 @@ public class User {
 	private String memberId;
 	
 	@Column(nullable = false, length = 100)
-	private String pwd;
+	private String password;
+	
+	@Column(nullable = false, length = 100)
+	private String confirm_password;
 	
 	@Column(length = 100)
 	private String questions;

@@ -11,7 +11,7 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	//JPA Naming 쿼리 전략
 	// findByUsernameAndPassword 실제로 없는 함수지만 
 	// SELECT * FROM users WHERE username=? AND password=?; 이런 쿼리가 동작한다.
-	User findByMemberIdAndPwd(String username, String password);
+	User findByMemberIdAndPassword(String username, String password);
 	
 }
 

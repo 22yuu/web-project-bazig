@@ -17,7 +17,6 @@
 <!-- stylesheet -->
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 <link rel="stylesheet" type="text/css" href="css/lightslider.css">
-<link rel="stylesheet" href="css/loginForm.css">
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -25,19 +24,23 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-$(function() {
+<script>
+/*서브메뉴*/
+/* $(function() {
 	$("#main-nav-wrapper li").mouseenter(function(event) {
-/*  	$(this).find("div").parent().css("background", "#fff");
+	  	$(this).find("div").parent().css("background", "#fff");
 		$(this).find("div").parent().children("a").css("color", "#000");
-		$(this).find("div").slideDown("fast");*/
+		$(this).find("div").slideDown("fast");
 		$("#sub-nav-wrapper li").find("div").slideDown("fast");
 	}).mouseleave(function() {
 		$("#sub-nav").find("div:visible").slideUp(50, function() {
 			// #menubar-menus li:hover 처리를 하지 않을 경우 아래 라인 활성,
 		});
 	});
-});
+}); */
+$(".login").on('click', function() {
+	$(".modal-content").load("/loginForm");
+})
 </script>
 </head>
 <body>
@@ -53,6 +56,8 @@ $(function() {
 				<div class="main-logo-area">
 					<h1 class="main-logo"><a href="/"><img src="images/logo.png" alt="BAZIG"></a></h1>
 				</div>
+				
+				
 				<div class="search-bar-area">
 					<form>
 						<input type="text" name="q" id="search_input" class="search_input">
@@ -66,7 +71,7 @@ $(function() {
 							<a href="#" target="_blank">입점문의</a> |
 							<a href="#">장바구니</a> |
 							<a href="#">마이페이지</a> |
-							<a class="login" href="#">로그인</a> |
+							<a id="login" class="login" data-toggle="modal" data-target="#modal" role="button" href="#">로그인</a> |
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -82,6 +87,13 @@ $(function() {
 			</div>
 		</div>
 		
+		<!-- 팝업 로그인 모달 영역 -->
+		<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+				<div class="modal-dialog"> 
+					<div class="modal-content">
+					</div> 
+				</div>
+		</div>
 		<!-- nav -->
 		<div id="nav">
 			<ul id="main-nav-wrapper">
@@ -99,6 +111,6 @@ $(function() {
 				<li><div class="gnb-sub-menu"><p>Sub menu 1<p></div></li>
 			</ul>
 		</div>
-	    
+
 		<!--  end navigation -->
 	<!-- end header -->

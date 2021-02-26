@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="layout/header.jsp" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <script>
-$(document).ready(function(){
-
-	$(".login").on('click', function(){
-		$(".popup").show();
-		$(".dim").show();
-		});
-	$(".popup .close").on('click', function(){
-		$(this).parent().hide();
-		$(".dim").hide();
-		});
-
+$(document).ready(function(){		
+	$('#login_need').click(function(){
+		alert("로그인이 필요합니다.")
+	});
+	$('#btn-zzim').click(function(){
+		$(this).css("background","url(images/heart.png) no-repeat")
+	});
+	
 	$(function() {
 		$("#best_item_nav_menus li").mouseenter(function(event) {
  			$(this).find("div").parent().css("background", "#FFF");
@@ -25,8 +23,6 @@ $(document).ready(function(){
 		});
 	});
 });
-
-
 </script>
 </head>
 <body>
@@ -61,25 +57,18 @@ $(document).ready(function(){
 	 	<div class="best_item_nav">
 	 		<ul id="best_item_nav_menus" class="best_item_nav_menu">
 				<li> <a href="#"> <span> BEST1 </span> </a>
-					 <div><p>Sub menu 1</div>
 				</li>
 				<li> <a href="#"> <span> BEST2 </span> </a>
-					 <div><p>Sub menu 2</div>
 				</li>
 				<li> <a href="#"> <span> BEST3 </span> </a>
-					 <div><p>Sub menu 3</div>
 				</li>
 				<li> <a href="#"> <span> BEST4 </span> </a>
-					 <div><p>Sub menu 4</div>
 				</li>
 				<li> <a href="#"> <span> BEST5 </span> </a>
-					 <div><p>Sub menu 5</div>
 				</li>
 				<li> <a href="#"> <span> BEST6 </span> </a>
-					 <div><p>Sub menu 6</div>
 				</li>
 				<li> <a href="#"> <span> BEST7 </span> </a>
-					 <div><p>Sub menu 7</div>
 				</li>
 			</ul>
 		</div>
@@ -108,7 +97,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal }">
+						  	<button class="btn-zzim" id="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" id="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -774,41 +773,12 @@ $(document).ready(function(){
 			</ul>
 		</section>
 	</div>
+	
 
+<script type="text/javascript" src="js/user.js"></script>
+<%@ include file="layout/side_bar.jsp" %>
 <%@ include file="layout/footer.jsp" %>
+</body>
 <!-- script-link -->
 <script type="text/javascript" src="js/script.js"></script>
-</body>
-
-<div class="popup">
-	<header class="header">
-		<h2>로그인</h2>
-		<p> 다양한 할인 혜택과 이벤트, 보너스 쿠폰을 놓치지 마세요 </p>
-		<button class="kakao-login-btn"><img src="images/kakao-icon.png"> 카카오로 로그인 </button>
-		<button class="naver-login-btn">네이버로 로그인 </button>
-		<button class="google-login-btn">구글로 로그인 </button>
-		<hr>
-	</header>
-	<div class="content">
-		<div class="input-wrapper">
-			<label>아이디<span>*</span></label>
-			<input class="member-id-input" type="text" id="memberId">
-		</div>	
-		<div class="input-wrapper">
-			<label>비밀번호<span>*</span></label>
-			<input class="password-input" type="password" id="pwd">
-		</div> 
-		<div class="input-wrapper">
-			<input type="checkbox" id="chk1"><label for="chk1_1">로그인 상태 유지</label>
-			<a href="#" class="forgotten-password">비밀번호를 잊으셨나요?</a>
-		</div>
-	</div>
-	<button  type="submit" class="login-btn">로그인</button>
-	<button  id="btn-join" class="member-btn" onclick="location.href='joinForm'">멤버십 가입하기</button>
-	<a href="#" class="membership-info">멤버십 정보</a>
-	<a href="#" class="close"></a>
-</div>
-
-<div class="dim"></div>
-<script type="text/javascript" src="js/user.js"></script>
 </html>

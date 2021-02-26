@@ -14,9 +14,10 @@ let index = {
 			this.save();
 		});
 		
-		$(".login-btn").on("click", ()=>{
+		$("#login-btn").on("click", ()=>{
 			this.login();
 		});
+		
 	},
 	
 	save:function(){
@@ -25,7 +26,8 @@ let index = {
 
 		let data = {
 			memberId:$("#memberId").val(),
-			pwd:$("#pwd1").val(),
+			password:$("#password").val(),
+			confirm_password:$("#confirm_password").val(),
 			questions:$("#questions").val(),
 			answer:$("#answer").val(),
 			username:$("#username").val(),
@@ -53,18 +55,16 @@ let index = {
 		});
 	},
 	
-		login:function(){
-		//alert('user의 save함수 호출됨');
+	login:function(){
+	//alert('user의 save함수 호출됨');
 		
-
 		let data = {
 			memberId:$("#memberId").val(),
-			pwd:$("#pwd1").val()
+			password:$("#password").val()
 		};
 		
 		// ajax 호출시 디폴트가 비동기 호출
 		$.ajax({
-		  //회원가입 수행 요청
 		  type:"POST",
 		  url:"/api/user/login",
 		  data: JSON.stringify(data),
@@ -77,6 +77,8 @@ let index = {
 			alert(JSON.stringify(error));
 		});
 	}
+	
+	
 }
 
 var telnumber="";

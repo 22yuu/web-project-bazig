@@ -11,7 +11,7 @@
         cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',
         easing: 'linear', //'for jquery animation',//
         speed: 400, //ms'
-        auto: true,
+        auto: false,
         pauseOnHover: true,
         loop: false,
         slideEndAnimation: true,

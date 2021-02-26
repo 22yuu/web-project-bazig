@@ -37,11 +37,11 @@ function selectedDomain(){
 		</div>
 		<div class="input-wrapper"> 
 			<label>비밀번호<span>*</span></label>
-			<input id="pwd1" class="pwd-input" type="password">
+			<input id="password" class="pwd-input" type="password">
 		</div>
 		<div class="input-wrapper"> 
 			<label>비밀번호 확인<span>*</span></label>
-			<input id="pwd2" class="pwd-input" type="password">
+			<input id="confirm_password" class="pwd-input" type="password">
 			<div id="password_check" style="color: red;"></div>
 		</div>
 		<div class="input-wrapper"> 
