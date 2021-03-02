@@ -3,7 +3,7 @@
 
 <%@ include file="../layout/header.jsp" %>
 
-<link rel="stylesheet" href="css/joinForm.css">
+<link rel="stylesheet" href="/css/joinForm.css">
 
 <script>
 

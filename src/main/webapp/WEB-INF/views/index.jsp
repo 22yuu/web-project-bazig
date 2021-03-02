@@ -41,17 +41,17 @@ $(document).ready(function(){
   %> --%>
 	<!-- Main banner, Sub banner -->
 	<div id="main_banner_frame">
-		<div id="inner_main_div">
+		<div class="inner_main_div">
 			이벤트/기획전 배너
 		</div>
-		
-		<div id="inner_sub_div">
+	
+		<div class="inner_sub_div">
 			인스타 연동 배너
 		</div>
 		<div id="bullets"></div>
 	</div>
 
-	<!-- Best items Slider -->
+	 <!-- Best items Slider -->
 	<div id="best_item_frame">
 	 	<span style="font-size:32px">BEST</span>
 	 	<div class="best_item_nav">
@@ -118,7 +118,7 @@ $(document).ready(function(){
 				<div class="box">
 				<!-- img-box -->
 				<div class="slide-img"><a><img></a></div>
-								<!-- detail-box -->
+				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
 				<div class="type">
@@ -775,7 +775,6 @@ $(document).ready(function(){
 	</div>
 	
 
-<script type="text/javascript" src="js/user.js"></script>
 <%@ include file="layout/side_bar.jsp" %>
 <%@ include file="layout/footer.jsp" %>
 </body>

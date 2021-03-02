@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+  <sec:authentication property="principal" var="principal"/>
+</sec:authorize>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,23 +13,21 @@
 <title>BAZIG</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA_Compatible" content="IE=chrome">
-  
-<!-- page-icon -->
-<link rel="shortcut icon" href="images/logo.png">
 
-<!-- stylesheet -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- page-icon -->
+<link rel="shortcut icon" href="/images/logo.png">
+
 
 <!-- stylesheet -->
 <link rel="stylesheet" type="text/css" href="/css/common.css">
-<link rel="stylesheet" type="text/css" href="css/lightslider.css">
+<link rel="stylesheet" type="text/css" href="/css/lightslider.css">
+<link rel="stylesheet" href="/css/loginForm.css">
 
 <!-- js -->
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/lightslider.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/lightslider.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script>
 /*서브메뉴*/
 /* $(function() {
@@ -38,9 +42,11 @@
 		});
 	});
 }); */
-$(".login").on('click', function() {
-	$(".modal-content").load("/loginForm");
-})
+$(document).ready(function(){
+	$(".login").on('click', function() {
+		$(".modal-content").load("/auth/modal_loginForm")
+	});
+});
 </script>
 </head>
 <body>
@@ -54,10 +60,9 @@ $(".login").on('click', function() {
 			<!-- Main logo, search-bar, upper menu -->
 			<div class="frame">
 				<div class="main-logo-area">
-					<h1 class="main-logo"><a href="/"><img src="images/logo.png" alt="BAZIG"></a></h1>
+					<h1 class="main-logo"><a href="/"><img src="/images/logo.png" alt="BAZIG"></a></h1>
 				</div>
-				
-				
+	
 				<div class="search-bar-area">
 					<form>
 						<input type="text" name="q" id="search_input" class="search_input">
@@ -65,7 +70,7 @@ $(".login").on('click', function() {
 					</form>
 				</div>
 				<c:choose>
-					<c:when test="${empty sessionScope.principal }">
+					<c:when test="${empty principal}">
 						<div class="upper-menu-area">
 							<a href="#" target="_blank">베이직소개</a> |
 							<a href="#" target="_blank">입점문의</a> |
@@ -80,7 +85,7 @@ $(".login").on('click', function() {
 							<a href="#" target="_blank">입점문의</a> |
 							<a href="#">장바구니</a> |
 							<a href="#">마이페이지</a> |
-							<a class="logout" href="#">로그아웃</a> |
+							<a id="logout" class="logout" href="/logout">로그아웃</a> |
 						</div>
 					</c:otherwise>
 				</c:choose>			
@@ -104,11 +109,6 @@ $(".login").on('click', function() {
 				<li id="nav_highend" class="swiper-slide-active"> <a href="#"> <span> 하이엔드 </span> </a>
 				<li id="nav_exhibitions" class="swiper-slide-active"> <a href="#"> <span> 기획전 </span> </a>
 				<li id="nav_store" class="swiper-slide-active"> <a href="#"> <span> 스토어 </span> </a>
-			</ul>
-		</div>
-	    <div id="sub-nav">
-			<ul id="sub-nav-wrapper">
-				<li><div class="gnb-sub-menu"><p>Sub menu 1<p></div></li>
 			</ul>
 		</div>
 
