@@ -247,8 +247,11 @@ body { padding: 0px; margin:0px;}
 .type .origin-price { color: #969696; }
 .type .discount-percent {margin-top: 20px; font-size: 32px;color: red; font-weight: 700; text-align: right;}
 .type .prd-heart {position: absolute; right: 0; top: 0; padding-top: 0;}
+/*찜버튼 css */
 .type .zzim {margin: 15px 0px 0px 3px;}
-.type .zzim .btn-zzim {background:url(../images/heart_empty.png) no-repeat; width:28px; height:28px; border:0px;}
+.type .zzim .btn-zzim {background:url(../images/heart_empty.png) no-repeat; width:28px; height:28px; border:0px; background-size:cover;}
+
+.type .zzim .btn-zzim.done { background:url(../images/heart.png) no-repeat; width:28px; height:28px; border:0px; background-size:cover; }
 
 @keyframes fade{
 	0% {

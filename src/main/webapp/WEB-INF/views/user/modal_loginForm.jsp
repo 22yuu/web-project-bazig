@@ -22,13 +22,14 @@ $(document).ready(function(){
 		<button class="google-login-btn">구글로 로그인 </button>
 		<hr>
 	</header>
+	<form action="/auth/loginProc" method="post">
 	<div class="content">
 		<div class="input-wrapper">
-			<label>아이디<span>*</span></label>
-			<input class="member-id-input" type="text" name="memberId" id="memberId">
+			<label for="memberId">아이디<span>*</span></label>
+			<input class="member-id-input" type="text" name="username" id="memberId">
 		</div>	
 		<div class="input-wrapper">
-			<label>비밀번호<span>*</span></label>
+			<label for="password">비밀번호<span>*</span></label>
 			<input class="password-input" type="password" name="password" id="password">
 		</div> 
 		<div class="input-wrapper">
@@ -36,13 +37,12 @@ $(document).ready(function(){
 			<a href="#" class="forgotten-password">비밀번호를 잊으셨나요?</a>
 		</div>
 	</div>
-	<button class="login-btn" id="login-btn">로그인</button>
-
+	<button id="btn-login" class="login-btn">로그인</button>
+	</form>
 	<button  id="btn-join" class="member-btn" onclick="location.href='/auth/joinForm'">멤버십 가입하기</button>
 	<a href="#" class="membership-info">멤버십 정보</a>
 	<a href="#" class="close"></a>
-</div>
-
+</div>		
 <div class="dim"></div>
 
 <script type="text/javascript" src="/js/user.js"></script>

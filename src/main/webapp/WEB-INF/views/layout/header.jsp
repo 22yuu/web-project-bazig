@@ -17,7 +17,7 @@
 <!-- page-icon -->
 <link rel="shortcut icon" href="/images/logo.png">
 
-
+      
 <!-- stylesheet -->
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 <link rel="stylesheet" type="text/css" href="/css/lightslider.css">

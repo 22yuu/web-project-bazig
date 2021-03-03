@@ -40,14 +40,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 			.csrf().disable() //csrf토큰 비활성화 (테스트시 걸어두는게 좋음)
 			.authorizeRequests() //요청이 들어오면,
-			.antMatchers("/", "/auth/**", "/js/**","/css/**", "/images/**", "/img/**") // /auth/ 이하 url은 
+			.antMatchers("/index.jsp","/", "/auth/**", "/js/**","/css/**", "/images/**", "/img/**") // /auth/ 이하 url은 
 			.permitAll() // 전부 허가
 			.anyRequest()
 			.authenticated()
 		.and()
 			.formLogin()
 			.loginPage("/auth/loginForm/") // 허가되지 않은 url은 로그인 폼으로
-			.loginProcessingUrl("/auth/loginProc") // 스프링시큐리티가 해당 주소로오는 로그인을 가로채서 대신 로그인을 해준다.
+			.loginProcessingUrl("/auth/loginProc") // 스프링시큐리티가 해당 주소로 오는 로그인을 가로채서 대신 로그인을 해준다.
 			.defaultSuccessUrl("/"); // 로그인 성공하면 이동하는 디폴트 주소
 	}
 }

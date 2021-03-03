@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 
-<script type="text/javascript" src="/js/jquery.js"></script>
+<!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
 
 <%@ include file="../layout/header.jsp" %>
 
@@ -20,11 +20,5 @@
 	  
 	  <button id="btn-login" class="btn btn-primary">로그인</button>
 	</form>
-</div>
-
-<!-- 
-<button id="btn-login" class="btn btn-primary">로그인</button>
-<script src="/js/user.js"></script>
- -->
- 
+</div> 
 <%@ include file="../layout/footer.jsp" %>

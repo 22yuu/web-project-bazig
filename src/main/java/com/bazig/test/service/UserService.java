@@ -24,6 +24,7 @@ public class UserService {
 			String rawPassword = user.getPassword();
 			String encPassword = encoder.encode(rawPassword);
 			user.setPassword(encPassword);
+			user.setConfirm_password(encPassword);
 			userRepository.save(user);
 		} catch (Exception e) {
 			// TODO: handle exception

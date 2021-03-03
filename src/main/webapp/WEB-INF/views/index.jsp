@@ -4,11 +4,11 @@
 
 <script>
 $(document).ready(function(){		
-	$('#login_need').click(function(){
+	$('button[name=login_need]').click(function(){
 		alert("로그인이 필요합니다.")
 	});
-	$('#btn-zzim').click(function(){
-		$(this).css("background","url(images/heart.png) no-repeat")
+	$('button[name=btn-zzim]').click(function(){
+		$(this).toggleClass("done");
 	});
 	
 	$(function() {
@@ -100,11 +100,11 @@ $(document).ready(function(){
 					<li class="discount-percent"> 42%  </li>
 					<li class="zzim">
 						<c:choose>
-						  <c:when test="${empty principal }">
-						  	<button class="btn-zzim" id="login_need"></button>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
 						  </c:when>
 						  <c:otherwise>
-							<button class="btn-zzim" id="btn-zzim"></button>
+							<button class="btn-zzim" name="btn-zzim"></button>
 						  </c:otherwise>
 						</c:choose>
 					</li>
@@ -117,7 +117,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><a><img></a></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -131,7 +133,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -141,7 +153,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><a><img></a></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -155,7 +169,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -165,7 +189,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><a><img></a></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -179,7 +205,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -189,7 +225,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -203,7 +241,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						 <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -213,7 +261,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -227,7 +277,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -244,7 +304,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -258,17 +320,29 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
 			  </li>
 			  <!-- 2 -->
 			  <li class="item-b">
-			  	<!-- box-slider -->
+			  <!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -282,7 +356,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						 <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -292,7 +376,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -306,7 +392,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -316,7 +412,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -330,7 +428,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -340,7 +448,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -354,17 +464,29 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						 <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
 			  </li>
 			  <!-- 6 -->
 			  <li class="item-f">
-			  	<!-- box-slider -->
+			  <!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -378,8 +500,18 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
-				</ul>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
+					</ul>
 				</div>
 				</div>
 			  </li>
@@ -631,7 +763,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -645,7 +779,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -655,7 +799,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -669,7 +815,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -679,7 +835,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -693,7 +851,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -703,7 +871,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -717,7 +887,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -727,7 +907,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -741,7 +923,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						  <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
@@ -751,7 +943,9 @@ $(document).ready(function(){
 			  	<!-- box-slider -->
 				<div class="box">
 				<!-- img-box -->
-				<div class="slide-img"><img></div>
+				<div class="overlay">
+					<div class="slide-img"><a><img></a></div>
+				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
 				<!-- type -->
@@ -765,7 +959,17 @@ $(document).ready(function(){
 						<del class="origin-price">69,000원 <br></del> 
 						<strong class="current-price">39,000원 </strong>
 					</li>
-					<li class="discount-percent"> 42%  <a href="#"><img src="images/heart.png"></a> </li>
+					<li class="discount-percent"> 42%  </li>
+					<li class="zzim">
+						<c:choose>
+						 <c:when test="${empty principal}">
+						  	<button class="btn-zzim" name="login_need"></button>
+						  </c:when>
+						  <c:otherwise>
+							<button class="btn-zzim" name="btn-zzim"></button>
+						  </c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				</div>
 				</div>
