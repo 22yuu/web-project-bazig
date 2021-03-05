@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+button { border:0; outline:0;}
+
 :root { -webkit-tap-highlight-color: transparent;
 --blue: #007bff;
 --indigo: #6610f2;
@@ -84,7 +87,7 @@ cursor: pointer;
 
 /*모달 로그인 폼 css */
 .popup a { text-decoration: none; color:#222}
-.popup .header { margin-bottom:35px; }
+.popup .header { margin:0;margin-bottom:35px; }
 .popup .divider {margin:20px 0; color:#e8e8e8}
 .popup button { margin: 20px 0 0;}
 
@@ -97,16 +100,18 @@ width:24px; height:24px; background: url(../images/close-btn.png) no-repeat; obj
 .popup h2{ padding: 0; margin: 0 0 12px; font-size: 20px; color:#222; text-align: center; line-height: 20px;}
 .popup p { font-size: 13px; margin: 0 0 20px;}
 
-.kakao-login-btn { width:100%; min-height:48px; font-weight:400; background-color: #fee500; border:0 solid transparent; margin:0px;}
+.kakao-login-btn { width:100%; min-height:48px; border:0 solid transparent; margin:0px; background-color:#fee500;}
+.kakao-login-btn img { object-fit:cover;}
 .kakao-login-btn:hover { background-color: rgba(240,215,0,0.85); border:0 solid transparent;}
+
 
 .naver-login-btn { width:100%; min-height:48px; font-weight:400; background-color: green; border:0 solid transparent;}
 
 .google-login-btn {width:100%; min-height:48px; font-weight:400; background-color: red; color:#fff;border:0 solid transparent;}
 
 .input-wrapper { margin:13px 0; text-align: left; box-sizing: border-box;}
-.input-wrapper label { margin: 6px 0 7px;}
-.input-wrapper a.forgotten-password {position: absolute; text-decoration: none; right:52px; line-height: 30px;}
+.input-wrapper .label { display:block; line-height:20px; margin: 6px 0 7px;}
+.input-wrapper a.forgotten-password {position: absolute; text-decoration: none; right:52px;}
 .input-wrapper span { color:#de4f41;}
 input[type=text],
 input[type=password] {width:100%; height:48px; font-size:13px; color:#373737; border: 1px solid #e8e8e8; background: #fff; text-decoration: none; text-indent: 20px;}

@@ -8,9 +8,7 @@ let index = {
 			$(".cellphone").each(function(){
 			cellphone += $(this).val();
 			});
-			$(".email").each(function(){
-			email += $(this).val();
-			});
+			email = $(".email").val() + $("#select-email-domain").val();
 			this.save();
 		});		
 	},

@@ -28,7 +28,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //프로젝트에서연결된 db의 넘버링 전략을 따라감.
 	private int id; // 시퀀스
 	
-	@Column(nullable = false, length=30)
+	@Column(nullable = false, length=100)
 	private String memberId;
 	
 	@Column(nullable = false, length = 100)

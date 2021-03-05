@@ -17,19 +17,19 @@ $(document).ready(function(){
 	<header class="header">
 		<h2>로그인</h2>
 		<p> 다양한 할인 혜택과 이벤트, 보너스 쿠폰을 놓치지 마세요 </p>
-		<button class="kakao-login-btn"><img src="/images/kakao-icon.png"> 카카오로 로그인 </button>
-		<button class="naver-login-btn">네이버로 로그인 </button>
-		<button class="google-login-btn">구글로 로그인 </button>
-		<hr>
+		<button class="kakao-login-btn" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=34c4dd1b843bc1b79acfc1b6c119f767&redirect_uri=http://localhost:8000/auth/kakao/callback&response_type=code'"><img src="/images/kakao-icon.png">카카오 로그인</button>
+		<button class="naver-login-btn">네이버 로그인 </button>
+		<button class="google-login-btn">구글 로그인 </button>
+		<hr style="margin:20px 0;">
 	</header>
 	<form action="/auth/loginProc" method="post">
 	<div class="content">
 		<div class="input-wrapper">
-			<label for="memberId">아이디<span>*</span></label>
+			<label class="label" for="memberId">아이디<span>*</span></label>
 			<input class="member-id-input" type="text" name="username" id="memberId">
 		</div>	
 		<div class="input-wrapper">
-			<label for="password">비밀번호<span>*</span></label>
+			<label class="label" for="password">비밀번호<span>*</span></label>
 			<input class="password-input" type="password" name="password" id="password">
 		</div> 
 		<div class="input-wrapper">
@@ -44,5 +44,3 @@ $(document).ready(function(){
 	<a href="#" class="close"></a>
 </div>		
 <div class="dim"></div>
-
-<script type="text/javascript" src="/js/user.js"></script>

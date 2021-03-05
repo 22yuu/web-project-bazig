@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class BazigApplication extends SpringBootServletInitializer{
+public class BazigApplication{
 
 	public static void main(String[] args) {
 		SpringApplication.run(BazigApplication.class, args);

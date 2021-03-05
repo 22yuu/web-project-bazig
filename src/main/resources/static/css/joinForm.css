@@ -9,6 +9,7 @@
 }
 
 label span,p span { color:#de4f41;}
+
 .header {
 	margin:50px;	
 }
@@ -34,4 +35,4 @@ input[type=tel] {width:100%; height:48px; font-size:13px; color:#373737; border:
 .input-wrapper select { width:100%; height:48px; font-size:13px; color:#777; border: 1px solid #e8e8e8; background: #fff; text-decoration: none; text-indent: 10px; }
 
 input[name="gender"] { position: relative; top: 1.5px; padding-right:50px;}
-.btn-join-done { background-color:#343A40; color: #fff; border-radius: 10px; width: 180px; height:48px; font-size: 16px; border:0;}
+.btn-join-done { background-color:#343A40; color: #fff; border-radius: 10px; width: 180px; height:48px; font-size: 16px; border:0; outline:0;}
