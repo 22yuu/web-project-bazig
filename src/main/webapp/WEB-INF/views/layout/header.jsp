@@ -46,6 +46,9 @@ $(document).ready(function(){
 	$(".login").on('click', function() {
 		$(".modal-content").load("/auth/modal_loginForm")
 	});
+	$('#mypage_login_need').click(function(){
+		alert("로그인이 필요합니다.")
+	});
 });
 </script>
 </head>
@@ -74,8 +77,8 @@ $(document).ready(function(){
 						<div class="upper-menu-area">
 							<a href="#" target="_blank">베이직소개</a> |
 							<a href="#" target="_blank">입점문의</a> |
-							<a href="#">장바구니</a> |
-							<a href="#">마이페이지</a> |
+							<a href="/cart">장바구니</a> |
+							<a href="/mypage">마이페이지</a> |
 							<a id="login" class="login" data-toggle="modal" data-target="#modal" role="button" href="#">로그인</a> |
 						</div>
 					</c:when>
@@ -83,8 +86,8 @@ $(document).ready(function(){
 						<div class="upper-menu-area">
 							<a href="#" target="_blank">베이직소개</a> |
 							<a href="#" target="_blank">입점문의</a> |
-							<a href="#">장바구니</a> |
-							<a href="#">마이페이지</a> |
+							<a href="/auth/cart">장바구니</a> |
+							<a id="mypage" href="/auth/mypage">마이페이지</a> |
 							<a id="logout" class="logout" href="/logout">로그아웃</a> |
 						</div>
 					</c:otherwise>

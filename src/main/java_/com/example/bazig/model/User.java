@@ -34,40 +34,38 @@ public class User {
 	@Column(nullable = false, length = 100)
 	private String password;
 	
-	@Column(length = 100)
+	@Column(nullable = false, length = 100)
 	private String confirm_password;
 	
 	@Column(length = 100)
 	private String questions;
 	
-	@Column(length = 100)
+	@Column(nullable = false, length = 100)
 	private String answer;
 	
-	@Column(length = 30)
+	@Column(nullable = false, length = 30)
 	private String username;
 	
-	@Column(length = 4)
+	@Column(nullable = false, length = 4)
 	private String gender;
 	
 	@Column
 	private String tel;
 	
-	@Column(length = 100)
+	@Column(nullable = false, length = 100)
 	private String mobile;
 	
 	@Column(nullable = false, length = 50)
 	private String email;
 	
-	@Column(length = 100)
+	@Column(nullable = false, length = 100)
 	private String address;
 	
-	@Column(length = 100)
+	@Column(nullable = false, length = 100)
 	private String birthdate;
 	
 	@ColumnDefault("'user'")
 	private String role; // Enum을 쓰는게 좋음, // admin, user, manager
-	
-	private String oauth; // kakao, google, naver
 	
 	@CreationTimestamp
 	private Timestamp createDate;

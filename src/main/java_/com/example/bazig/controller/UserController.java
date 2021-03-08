@@ -3,16 +3,14 @@ package com.bazig.test.controller;
 
 import java.util.UUID;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -31,20 +29,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class UserController {
 	
-	@Value("${cos.key}")
-	private String cosKey; // 절대 노출되면 안됨!!!!!!!!!!!!
-	
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-	private AuthenticationManager authenticationManager;
-	
-//	@GetMapping("/")
-//	public String login() {
-//		System.out.println("******************logging************************");
-//		return "login";
-//	}
+
+	@GetMapping("/")
+	public String login() {
+		System.out.println("******************logging************************");
+		return "login";
+	}
 		
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
@@ -54,13 +47,9 @@ public class UserController {
 	public String loginForm() {
 		return "user/loginForm";
 	}
-	@GetMapping("/auth/mypage")
-	public String memberInfo() {
-		return "user/memberInfo";
-	}
 	
 	@GetMapping("/auth/kakao/callback")
-	public String kakaoCallback(String code) { //@ResponseBody Data를 리턴해주는 컨트롤러 함수
+	public @ResponseBody String kakaoCallback(String code) { //@ResponseBody Data를 리턴해주는 컨트롤러 함수
 		
 		// POST 방식으로 key=value 데이터를 요청 (카카오쪽으로)
 		// Retrofit2 안드로이드에서 많이 쓰임
@@ -142,35 +131,30 @@ public class UserController {
 		// 카카오로 회원가입시 
 		System.out.println("베이지그 카카오 멤버네임:"+kakaoProfile.getKakao_account().getEmail()+"_"+kakaoProfile.getId()); // 기존의 방식 회원들의 id랑 안겹치게
 		System.out.println("베이지그 카카오 이메일:"+kakaoProfile.getKakao_account().getEmail());
-		// UUID란 -> 중복되지 않는 어떤 특정 값을 만들어내는 알고리즘
-		// 이걸 쓰게되면 계속 바껴있는 아이디, 패스워드를 확인을 못하기 때문에 로그인을 할 수 없다.
-		//UUID tempPassword = UUID.randomUUID(); // 임시비밀번호 
-		System.out.println("베이지그 카카오 패스워드:"+cosKey);
+		UUID tempPassword = UUID.randomUUID(); // 임시비밀번호 
+		System.out.println("베이지그 카카오 패스워드:"+tempPassword);
 		// 만약 쇼핑몰을 구성하게 되면 주소 정보는?? -> 추가로 사용자에게 주소 정보를 입력하게 만듬
 
 		String kakaoId = kakaoProfile.getKakao_account().getEmail()+"_"+kakaoProfile.getId();
 		String kakaoEmail = kakaoProfile.getKakao_account().getEmail();
-		String kakaoPassword = cosKey.toString();
+		String kakaoPassword = tempPassword.toString();
 		
 		User kakaoUser = User.builder()
 				.memberId(kakaoId)
 				.password(kakaoPassword)
 				.email(kakaoEmail)
-				.oauth("kakao")
 				.build();
 		
 		//가입자 혹은 비가입자 체크해서 처리
 		User originUser = userService.회원찾기(kakaoUser.getMemberId());
 		
-		if(originUser.getMemberId() == null) {
+		if(originUser == null) {
 			userService.회원가입(kakaoUser);
 		}
 		
-		//로그인 처리
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getMemberId(), cosKey)); 
-		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
-		return "redirect:/"; 
+		
+		return "회원가입 완료"; 
 	}
 	
 	@GetMapping("/auth/modal_loginForm")

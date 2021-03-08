@@ -983,5 +983,5 @@ $(document).ready(function(){
 <%@ include file="layout/footer.jsp" %>
 </body>
 <!-- script-link -->
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
 </html>

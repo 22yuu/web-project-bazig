@@ -3,7 +3,6 @@ package com.bazig.test.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,12 +21,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private PrincipalDetailService principalDetailService;
 	
-	@Bean
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
-
 	@Bean //IoC
 	public BCryptPasswordEncoder encodePWD() {
 		return new BCryptPasswordEncoder();
@@ -47,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 			.csrf().disable() //csrf토큰 비활성화 (테스트시 걸어두는게 좋음)
 			.authorizeRequests() //요청이 들어오면,
-			.antMatchers("/", "/auth/**", "/js/**","/css/**", "/images/**", "/img/**") // /auth/ 이하 url은 
+			.antMatchers("/index.jsp","/", "/auth/**", "/js/**","/css/**", "/images/**", "/img/**") // /auth/ 이하 url은 
 			.permitAll() // 전부 허가
 			.anyRequest()
 			.authenticated()

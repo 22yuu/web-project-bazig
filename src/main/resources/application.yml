@@ -4,6 +4,7 @@ server:
     encoding:      charset: utf-8      force: true      enabled: true
   error:
       include-exception: true # 오류 응답에 exception의 내용을 포함할지 여부 include-stacktrace: always # 오류 응답에 stacktrace 내용을 포함할 지 여부
+      include-stacktrace: always
 
 
 spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
@@ -28,3 +29,6 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
   jackson:
     serialization:
       fail-on-empty-beans: false
+
+cos:
+  key: cos1234
