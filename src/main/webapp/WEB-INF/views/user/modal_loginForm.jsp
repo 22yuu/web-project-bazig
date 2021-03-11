@@ -19,7 +19,7 @@ $(document).ready(function(){
 		<p> 다양한 할인 혜택과 이벤트, 보너스 쿠폰을 놓치지 마세요 </p>
 		<button class="kakao-login-btn" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=34c4dd1b843bc1b79acfc1b6c119f767&redirect_uri=http://localhost:8000/auth/kakao/callback&response_type=code'"><img src="/images/kakao-icon.png">카카오 로그인</button>
 		<button class="naver-login-btn">네이버 로그인 </button>
-		<button class="google-login-btn">구글 로그인 </button>
+		<button class="google-login-btn" onclick="location.href='/oauth2/authorization/google'">구글 로그인 </button>
 		<hr style="margin:20px 0;">
 	</header>
 	<form action="/auth/loginProc" method="post">

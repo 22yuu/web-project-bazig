@@ -86,8 +86,8 @@ $(document).ready(function(){
 						<div class="upper-menu-area">
 							<a href="#" target="_blank">베이직소개</a> |
 							<a href="#" target="_blank">입점문의</a> |
-							<a href="/auth/cart">장바구니</a> |
-							<a id="mypage" href="/auth/mypage">마이페이지</a> |
+							<a href="/cart">장바구니</a> |
+							<a id="mypage" href="/mypage">마이페이지</a> |
 							<a id="logout" class="logout" href="/logout">로그아웃</a> |
 						</div>
 					</c:otherwise>

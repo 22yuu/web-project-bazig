@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.bazig.test.config.auth.PrincipalDetailService;
+import com.bazig.test.config.oauth.PrincipalOauth2UserService;
 
 
 @Configuration //빈 등록: 스프링 컨테이너에서 객체를 관리할 수 있게 하는 것(IoC 관리)
@@ -21,6 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
 	private PrincipalDetailService principalDetailService;
+	
+	@Autowired
+	private PrincipalOauth2UserService pricipalOauth2DetailService;
 	
 	@Bean
 	@Override
@@ -47,14 +51,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 			.csrf().disable() //csrf토큰 비활성화 (테스트시 걸어두는게 좋음)
 			.authorizeRequests() //요청이 들어오면,
-			.antMatchers("/", "/auth/**", "/js/**","/css/**", "/images/**", "/img/**") // /auth/ 이하 url은 
-			.permitAll() // 전부 허가
-			.anyRequest()
-			.authenticated()
-		.and()
-			.formLogin()
-			.loginPage("/auth/loginForm/") // 허가되지 않은 url은 로그인 폼으로
-			.loginProcessingUrl("/auth/loginProc") // 스프링시큐리티가 해당 주소로 오는 로그인을 가로채서 대신 로그인을 해준다.
-			.defaultSuccessUrl("/"); // 로그인 성공하면 이동하는 디폴트 주소
+				.antMatchers("/", "/auth/**", "/js/**","/css/**", "/images/**", "/img/**") // /auth/ 이하 url은 
+				.permitAll() // 전부 허가
+				.anyRequest()
+				.authenticated()
+			.and()
+				.formLogin()
+				.loginPage("/auth/loginForm/") // 허가되지 않은 url은 로그인 폼으로
+				.loginProcessingUrl("/auth/loginProc") // 스프링시큐리티가 해당 주소로 오는 로그인을 가로채서 대신 로그인을 해준다.
+				.defaultSuccessUrl("/")// 로그인 성공하면 이동하는 디폴트 주소
+			.and()
+				.oauth2Login() // Tip. 코드X, (엑세스토큰+사용자프로필정보 O)
+				.loginPage("/auth/loginForm") 
+				.userInfoEndpoint()
+				.userService(pricipalOauth2DetailService);
 	}
 }

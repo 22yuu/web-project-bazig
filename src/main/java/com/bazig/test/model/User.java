@@ -37,20 +37,11 @@ public class User {
 	@Column(length = 100)
 	private String confirm_password;
 	
-	@Column(length = 100)
-	private String questions;
-	
-	@Column(length = 100)
-	private String answer;
-	
 	@Column(length = 30)
 	private String username;
 	
 	@Column(length = 4)
 	private String gender;
-	
-	@Column
-	private String tel;
 	
 	@Column(length = 100)
 	private String mobile;

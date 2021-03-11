@@ -30,5 +30,12 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
     serialization:
       fail-on-empty-beans: false
 
+  security:    oauth2:      client:        registration:          google:
+            client-id: 94313580269-gd9df20s54solq0k61nn94qsm57c1ehf.apps.googleusercontent.com
+            client-secret: FKVFvcQatN3HrwE8asYtrelQ
+            scope:
+            - email
+            - profile
+
 cos:
   key: cos1234

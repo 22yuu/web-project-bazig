@@ -11,7 +11,6 @@ import com.bazig.test.model.User;
 //따라서 @Repository 생략이 가능하다.
 public interface UserRepository extends JpaRepository<User, Integer>{
 	//User findByMemberIdAndPassword(String username, String password);
-	
 	Optional<User> findByMemberId(String memberId);
 }
 

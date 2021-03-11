@@ -54,11 +54,14 @@ public class UserController {
 	public String loginForm() {
 		return "user/loginForm";
 	}
-	@GetMapping("/auth/mypage")
+	@GetMapping("/mypage")
 	public String memberInfo() {
 		return "user/memberInfo";
 	}
 	
+	
+	
+	// 카카오 로그인
 	@GetMapping("/auth/kakao/callback")
 	public String kakaoCallback(String code) { //@ResponseBody Data를 리턴해주는 컨트롤러 함수
 		

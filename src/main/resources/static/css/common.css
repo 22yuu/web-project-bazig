@@ -383,7 +383,7 @@ body { padding: 0px; margin:0px;}
 .footer_sec_1 span {text-align:left; float:left; padding : 0 30px;}
 .footer_sec_1 a { color: #969696; text-align: right; box-sizing: border-box; width: auto; margin: 0; padding: 0 30px; line-height: 3em}
 
-.footer_sec_2 { font-weight: 700; font-size: 1.5em; float: left; padding : 10px 10px 10px 30px; box-sizing:border-box;}
+.footer_sec_2 { font-weight: 700; font-size: 1.5em; float: left; padding : 10px 10px 10px 30px; box-sizing:border-box; width:1900px;}
 .footer_sec_2 span {font-size : 0.5em;}
 .footer_sec_2 a {margin-top:0px; float: right;}
 .footer_sec2 .footer-sns-area { float:right}

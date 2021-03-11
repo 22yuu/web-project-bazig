@@ -2,13 +2,7 @@ let index = {
 		
 	init:function(){
 		$("#btn-save").on("click",()=>{
-			$(".telnumber").each(function(){
-			telnumber += $(this).val();
-			});
-			$(".cellphone").each(function(){
-			cellphone += $(this).val();
-			});
-			email = $(".email").val() + $("#select-email-domain").val();
+			birthdate = $("#yyyy").val() + $("#mmmm").val() + $("#dddd").val();
 			this.save();
 		});
 		$("#btn-update").on("click", ()=>{ // function(){}, ()=>{} this를 바인딩하기 위해서!
@@ -24,15 +18,12 @@ let index = {
 			memberId:$("#memberId").val(),
 			password:$("#password").val(),
 			confirm_password:$("#confirm_password").val(),
-			questions:$("#questions").val(),
-			answer:$("#answer").val(),
 			username:$("#username").val(),
 			gender:$("input[name=gender]").val(),
-			tel:telnumber,
-			mobile:cellphone,
-			email:email,
+			mobile:$("#mobile").val(),
+			email:$("#email").val(),
 			address:$("#address").val(),
-			birthdate:$("#birthdate").val()
+			birthdate:birthdate
 		};
 		
 		// ajax 호출시 디폴트가 비동기 호출
@@ -88,9 +79,7 @@ let index = {
 	},
 }
 
-var telnumber="";
-var cellphone="";
-var email="";
+var birthdate="";
 index.init()
 
 
