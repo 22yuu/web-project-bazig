@@ -5,6 +5,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bazig.test.model.User;
 import com.bazig.test.repository.UserRepository;
@@ -35,11 +37,19 @@ public class UserService {
 			user.setPassword(encPassword);
 			user.setConfirm_password(encPassword);
 			userRepository.save(user);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			System.out.println("UserService:회원가입():"+ e.getMessage());
 		}
+//		String isOauthUser = user.getOauth();		
+//		if(isOauthUser != null) {
+//			System.out.println(isOauthUser);
+//			return "redirect:/auth/joinForm";
+//		} else {
+//			return "redirect:/";
+//		}
 	}
 	@Transactional
 	public void 회원수정(User user) {

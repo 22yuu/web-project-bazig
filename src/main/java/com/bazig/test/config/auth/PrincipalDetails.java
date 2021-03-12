@@ -72,7 +72,6 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 //				return "ROLE_"+user.getRole(); //스프링에서 ROLE을 받을 때, ROLE_를 꼭 붙여야한다. -> ex) ROLE_USER
 //			}
 //		}); 
-		
 		// 위의 주석처리된 부분을 다음과 같이 람다식으로 표현가능
 		collectors.add(()->{return "ROLE_"+user.getRole();}); 
 		return collectors;
