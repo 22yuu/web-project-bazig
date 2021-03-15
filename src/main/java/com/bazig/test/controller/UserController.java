@@ -1,8 +1,6 @@
 package com.bazig.test.controller;
 
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -17,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
@@ -62,7 +62,7 @@ public class UserController {
 	public String modal_loginForm() {
 		return "user/modal_loginForm";
 	}
-	
+
 	// 카카오 로그인 OAuth2 사용하지 않고 
 //	@GetMapping("/auth/kakao/callback")
 //	public String kakaoCallback(String code) { //@ResponseBody Data를 리턴해주는 컨트롤러 함수

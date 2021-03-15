@@ -60,6 +60,9 @@ public class User {
 	
 	private String oauth; // kakao, google, naver
 	
+	@ColumnDefault("0")
+	private String registed;
+	
 	@CreationTimestamp
 	private Timestamp createDate;
 }

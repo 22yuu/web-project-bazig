@@ -82,7 +82,7 @@ $(document).ready(function(){
 				<div class="box">
 				<!-- img-box -->
 				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
+					<div class="slide-img"><a href="/auth/productDetail"><img></a></div>
 				</div>
 				<!-- detail-box -->
 				<div class="detail-box">
@@ -109,6 +109,7 @@ $(document).ready(function(){
 						</c:choose>
 					</li>
 				</ul>
+				</div>
 				</div>
 				</div>
 			  </li>
@@ -147,6 +148,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 3 -->
 			  <li class="item-c">
@@ -181,6 +183,7 @@ $(document).ready(function(){
 						</c:choose>
 					</li>
 				</ul>
+				</div>
 				</div>
 				</div>
 			  </li>
@@ -219,6 +222,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 5 -->
 			  <li class="item-e">
@@ -255,6 +259,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 6 -->
 			  <li class="item-f">
@@ -289,6 +294,7 @@ $(document).ready(function(){
 						</c:choose>
 					</li>
 				</ul>
+				</div>
 				</div>
 				</div>
 			  </li>
@@ -370,6 +376,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 3 -->
 			  <li class="item-c">
@@ -404,6 +411,7 @@ $(document).ready(function(){
 						</c:choose>
 					</li>
 				</ul>
+				</div>
 				</div>
 				</div>
 			  </li>
@@ -442,6 +450,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 5 -->
 			  <li class="item-e">
@@ -478,6 +487,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 6 -->
 			  <li class="item-f">
@@ -512,6 +522,7 @@ $(document).ready(function(){
 						</c:choose>
 					</li>
 					</ul>
+				</div>
 				</div>
 				</div>
 			  </li>
@@ -793,6 +804,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 2 -->
 			  <li class="item-b">
@@ -827,6 +839,7 @@ $(document).ready(function(){
 						</c:choose>
 					</li>
 				</ul>
+				</div>
 				</div>
 				</div>
 			  </li>
@@ -865,6 +878,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 4 -->
 			  <li class="item-d">
@@ -899,6 +913,7 @@ $(document).ready(function(){
 						</c:choose>
 					</li>
 				</ul>
+				</div>
 				</div>
 				</div>
 			  </li>
@@ -937,6 +952,7 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			  <!-- 6 -->
 			  <li class="item-f">
@@ -973,13 +989,14 @@ $(document).ready(function(){
 				</ul>
 				</div>
 				</div>
+				</div>
 			  </li>
 			</ul>
 		</section>
 	</div>
 	
 
-<%@ include file="layout/side_bar.jsp" %>
+<%-- <%@ include file="layout/side_bar.jsp" %> --%>
 <%@ include file="layout/footer.jsp" %>
 </body>
 <!-- script-link -->

@@ -73,7 +73,7 @@ $(document).ready(function(){
 					</form>
 				</div>
 				<c:choose>
-					<c:when test="${empty principal}">
+					<c:when test="${empty principal || empty principal.user.registed}">
 						<div class="upper-menu-area">
 							<a href="#" target="_blank">베이직소개</a> |
 							<a href="#" target="_blank">입점문의</a> |

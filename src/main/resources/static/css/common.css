@@ -14,6 +14,10 @@ body { padding: 0px; margin:0px;}
 	cursor: pointer;
 }
 
+.app button {
+	cursor: pointer;
+}
+
 .app ul li {
 	list-style: none;
 }
@@ -88,7 +92,6 @@ body { padding: 0px; margin:0px;}
 	background-size: 22px;
 	
 }
-
 
 #header .upper-menu-area {  
 	text-align: right;
@@ -368,7 +371,6 @@ body { padding: 0px; margin:0px;}
 
 /* footer CSS area */
 #footer {
-	width: 100%;
 	left : 0;
 	bottom: 0;
 	box-sizing: border-box;
@@ -376,6 +378,7 @@ body { padding: 0px; margin:0px;}
 	margin-top: 50px;
 	color: black;
 	background: white;
+	display: inline-block;
 	border-top: 1px solid #969696;
 }
 

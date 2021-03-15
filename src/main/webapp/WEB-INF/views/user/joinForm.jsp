@@ -11,22 +11,20 @@
 		<h2> 회원가입</h2>
 		<p><span>*</span>가 표시되어있는건 모두 기입하셔야 합니다.</p>
 	</header>
-	
-	
-		<div class="input-wrapper"> 
-			<label>아이디<span>*</span></label>
-			<input id="memberId" class="id-input" type="text">
-			<div id="id_check"></div>
-		</div>
-		<div class="input-wrapper"> 
-			<label>비밀번호<span>*</span></label>
-			<input id="password" class="pwd-input" type="password">
-		</div>
-		<div class="input-wrapper"> 
-			<label>비밀번호 확인<span>*</span></label>
-			<input id="confirm_password" class="pwd-input" type="password">
-			<div id="password_check" style="color: red;"></div>
-		</div>
+			<div class="input-wrapper"> 
+				<label>아이디<span>*</span></label>
+				<input id="memberId" class="id-input" type="text">
+				<div id="id_check"></div>
+			</div>
+			<div class="input-wrapper"> 
+				<label>비밀번호<span>*</span></label>
+				<input id="password" class="pwd-input" type="password">
+			</div>
+			<div class="input-wrapper"> 
+				<label>비밀번호 확인<span>*</span></label>
+				<input id="confirm_password" class="pwd-input" type="password">
+				<div id="password_check" style="color: red;"></div>
+			</div>
 		<div class="input-wrapper"> 
 			<label>이름<span>*</span></label>
 			<input type="text" id="username">
@@ -56,15 +54,15 @@
 			<input type="text" id="yyyy" placeholder="년(4자)" size="4" maxlength="4" style="width:150px;">
 			<select id="mmmm" style="width:150px;">
 			<option>월</option>
-			<option value="01">1</option>
-			<option value="02">2</option>
-			<option value="03">3</option>
-			<option value="04">4</option>
-			<option value="05">5</option>
-			<option value="06">6</option>
-			<option value="07">7</option>
-			<option value="08">8</option>
-			<option value="09">9</option>
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
 			<option value="10">10</option>
 			<option value="11">11</option>
 			<option value="12">12</option>

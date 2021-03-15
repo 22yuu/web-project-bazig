@@ -1,3 +1,5 @@
+
+
 package com.bazig.test.config.oauth;
 
 
@@ -7,6 +9,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -28,8 +33,8 @@ public class PrincipalOauth2UserService  extends DefaultOAuth2UserService{
 	@Autowired
 	private UserService userService;
 	
-//	@Autowired
-//	private AuthenticationManager authenticationManager;
+	@Autowired
+	private AuthenticationManager authenticationManager;
 	
 	@Value("${OAuth2.key}")
 	private String OAuth2Key; // 절대 노출되면 안됨!!!!!!!!!!!!
@@ -74,15 +79,23 @@ public class PrincipalOauth2UserService  extends DefaultOAuth2UserService{
 				.build();
 		
 		//가입자 혹은 비가입자 체크해서 처리
+		System.out.println("가입자 혹은 비가입자 체크해서 처리");
 		User originUser = userService.회원찾기(oauth2UserBuilder.getMemberId());
 		if(originUser.getMemberId() == null) {
+			System.out.println("가입되지 않았습니다. 자동 회원가입처리");
 			userService.회원가입(oauth2UserBuilder);
+		} else {
+			System.out.println(originUser.getId());	
 		}
 		
-//		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(OAuthUser.getMemberId(), cosKey)); 
+		System.out.println("***Oauth2UserSerivce***");
+		System.out.println("id : "+ oauth2UserBuilder.getMemberId() + " pwd :  "+ oauth2UserBuilder.getPassword());
+		
+//		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(oauth2UserBuilder.getMemberId(), oauth2UserBuilder.getPassword())); 
 //		SecurityContextHolder.getContext().setAuthentication(authentication);
+		
+
 		
 		return new PrincipalDetails(oauth2UserBuilder, oauth2User.getAttributes()); // Authentication 객체에 오브젝트가 저장이 된다.
 	}
-	
 }

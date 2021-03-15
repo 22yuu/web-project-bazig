@@ -1,0 +1,325 @@
+@charset "UTF-8";
+/* Product Detail page area */
+#content1{
+	display: flex;
+	justify-content: center;
+	margin-top: 3.2%;
+}
+
+.cont1 img{
+	width: 100%;
+}
+
+.cont1 {
+	float: left;
+	width: 30%;
+	margin-left: 2%;
+}
+
+.cont2{
+	width: 47%;
+	float: left;
+		
+}
+
+h6 {
+	float: left;
+	font-weight: 700;
+	margin-right: 1%;
+	margin-left: 7%;
+	margin-bottom: 0px;
+	font-size: 20px;
+}
+h7{
+	font-weight: 390;
+	color: #999;
+}
+
+.block{
+	border-top: solid 1px #777;
+	float: left;
+	width: 100%;
+	height: 91%;
+	margin-left: 6%;
+}
+.block1{
+	width: 100%;
+	float: left;
+	
+}
+.block1 ul li{
+	float: left;
+	margin-top: 3.5%;
+	color: #333;
+}
+.block1 ul p{
+	float: left;
+	margin-top: 3.2%;
+	margin-left: 10.5%;
+	
+}
+.block2{
+	width: 100%;
+	float: left;
+}
+.block2 ul li{
+	float: left;
+	margin-top: 1%;
+	color: #333;
+}
+.block2 ul p{
+	float: left;
+	margin-left: 10%;
+	font-size: 19px;
+	font-weight: 700;
+}
+
+.block3 {
+	float: left;
+	width: 100%;
+	border-top: solid 1px #777;
+}
+.block3 ul{
+	margin-top: 2%;
+}
+.block3 ul li{
+	float: left;
+	color: #333;
+}
+.block3 ul span{
+	margin-left: 8.8%;
+	font-size: 9pt;
+	color: #444;
+}
+
+.block4 ul li{
+	float: left;
+	color: #333;
+}
+.block4 ul span{
+	margin-left: 13.5%;
+	font-size: 9pt;
+	color: #444;
+}
+.block5 ul li{
+	float: left;
+	color: #333;
+}
+.block5 ul span{
+	margin-left: 15.5%;
+	font-size: 9pt;
+	color: #444;
+}
+
+.block6 ul li{
+	float: left;
+	color: #333;
+}
+.block6 ul span{
+	margin-left: 8.5%;
+	font-size: 9pt;
+	color: #444;
+}
+.block7 ul li{
+	float: left;
+	color: #333;
+}
+.block7 ul span{
+	font-size: 9pt;
+	color: #444;
+}
+.block7 ul span a{
+	margin-left: 15.3%;
+	float: left;
+	display: block;
+	border: 1px solid #444;
+	padding: 5px 0px;
+	padding-left: 3%;
+	color: #444;
+	
+}
+
+#content2{
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 10%;
+}
+
+#content2 .same{width: 100%; float: left;}
+#content2 .same h6{width: 85%;}
+#content2 .same ul figure{
+	float: left;
+	width: 28%;
+	margin-top: 2%;
+}
+#content2 .same ul figure img{
+	width: 60%;
+}
+
+#content2 .rivew{
+	float: left;
+	width: 100%;
+	position: relative;
+	margin-top: 5%;
+}
+
+#content2 .per{
+	float: left;
+	margin-left: 5%;
+	margin-right: 0;
+	width: 40%;
+
+}
+
+#content2 .per .box{
+	width: 170px;
+	height: 170px;
+	float: right;
+	padding: 20px;
+	border: 2px solid #ccc;
+}
+
+#content2 .per .box p{
+	width: 100%;
+	font-weight: 700;
+	font-size: 15pt;
+	margin-bottom: 1;
+}
+#content2 .per .box span{
+	font-size: 17pt;
+	padding: 20px;
+	display: block;
+	color: #666
+}
+
+#content2 .graph{
+	width: 50%;
+	float: right;
+	text-align: left;
+	font-size: 12pt
+}
+
+.star_rating {
+	font-size:0; letter-spacing:-4px;
+}
+
+.star_rating a {
+    font-size:22px;
+    letter-spacing:0;
+    display:inline-block;
+    margin-left:5px;
+    color:#ccc;
+    text-decoration:none;
+}
+.star_rating a:first-child {
+	margin-left: 0;
+}
+
+.star_rating a.on {
+	color:#777;
+}
+
+.recom{
+	margin-top: 5%;
+	float: left;
+	width: 100%;
+}
+.recom1{
+	float: left;
+	
+}
+.recom1 h5{
+	border-top: 2px solid #777;
+	border-bottom: 1px solid #777;
+	padding: 10px;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+	font-size:20px;
+}
+.recom1 ul{
+	float: left;
+}
+.recom1 ul figure{
+	float: left;
+	width: 20%;
+	margin-top: 5%;
+}
+.recom1 ul figure img{
+	width: 85%;
+}
+.recom1 ul figure span{
+	float: left; 
+	width: 100%;
+	text-align: left;
+	margin-left: 7%;
+	font-size: 10pt;
+	font-weight: 600;
+	display: block;
+	padding: 3%;
+}
+.recom1 ul figure p{
+	float: left;
+	width: 100%;
+	text-align: left;
+	margin-left: 10%;
+}
+
+
+#content3{
+	float: left;
+	text-align: center;
+	border-top: 1px solid #ccc;
+	margin-top: 5%;
+	margin-left: 7%;
+	width: 85%;
+	
+}
+#content3 ul p{
+	margin-top: 3%;
+	float: center;
+	font-size: 35px;
+}
+
+#content3 ul li{
+	float: center;
+	font-size: 15px;
+	margin-bottom: 2%;
+	color: #444;
+}
+#content3 ul div{
+	font-size: 17px;
+	color:blue;
+}
+
+.button {
+	position: relative;
+	margin-left: 6%;
+}
+
+.button button{
+	float: left;
+	padding: 10px 40px;
+	margin-right:11%;
+	margin-top:10%;
+	background: #444;
+}
+.button button a{
+	color: #fff
+}
+.button .bt{
+	margin-right: 0px;
+	
+}
+
+#content4 {
+	float: left;
+	width: 100%;
+}
+.detail img{
+	display: block; margin: 0 auto; width: 50%;
+}
+.detail figure{
+	margin-top: 2%;
+}

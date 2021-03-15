@@ -10,9 +10,12 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import com.bazig.test.config.auth.PrincipalDetailService;
 import com.bazig.test.config.oauth.PrincipalOauth2UserService;
+import com.bazig.test.handler.OAuth2SuccessHandler;
 
 
 @Configuration //빈 등록: 스프링 컨테이너에서 객체를 관리할 수 있게 하는 것(IoC 관리)
@@ -25,6 +28,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
 	private PrincipalOauth2UserService pricipalOauth2DetailService;
+	
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
+//	@Autowired
+//	private OAuth2SuccessHandler authenticationSuccessHandler;
+	
+	@Bean
+	public AuthenticationSuccessHandler successHandler() {
+		return new OAuth2SuccessHandler();
+	}
 	
 	@Bean
 	@Override
@@ -43,6 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
+//		System.out.println("auth.getObject() : " + auth.getObject());
 	}
 	
 	
@@ -59,11 +74,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.formLogin()
 				.loginPage("/auth/loginForm/") // 허가되지 않은 url은 로그인 폼으로
 				.loginProcessingUrl("/auth/loginProc") // 스프링시큐리티가 해당 주소로 오는 로그인을 가로채서 대신 로그인을 해준다.
-				.defaultSuccessUrl("/")// 로그인 성공하면 이동하는 디폴트 주소
+				//.defaultSuccessUrl("/")// 로그인 성공하면 이동하는 디폴트 주소
 			.and()
 				.oauth2Login() // Tip. 코드X, (엑세스토큰+사용자프로필정보 O)
 				.loginPage("/auth/loginForm") 
 				.userInfoEndpoint()
-				.userService(pricipalOauth2DetailService);
+				.userService(pricipalOauth2DetailService)
+			.and()
+				.successHandler(successHandler());
+			
 	}
+	
+//	private Filter ssoFilter() {
+//		OAuth2LoginAuthenticationFilter oauthFilter = new OAuth2LoginAuthenticationFilter(null, null)
+//	}
 }
