@@ -10,7 +10,9 @@ $(document).ready(function(){
 	$('button[name=btn-zzim]').click(function(){
 		$(this).toggleClass("done");
 	});
-	
+	$(".slide-img a").click('click', function(){
+		location.href="/auth/productDetail";
+	});
 	$(function() {
 		$("#best_item_nav_menus li").mouseenter(function(event) {
  			$(this).find("div").parent().css("background", "#FFF");
@@ -82,7 +84,7 @@ $(document).ready(function(){
 				<div class="box">
 				<!-- img-box -->
 				<div class="overlay">
-					<div class="slide-img"><a href="/auth/productDetail"><img></a></div>
+					<div class="slide-img"><a><img></a></div>
 				</div>
 				<!-- detail-box -->
 				<div class="detail-box">

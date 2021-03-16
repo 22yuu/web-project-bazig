@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+.allc {
+	color: #fff;
+	font-size: 11pt;
+	text-align: center;
+	padding: 20px;
+	font-weight: 500;
+}
+
+#side{
+	position: relative;
+	
+}
+
+#side .all {
+	background: #333;
+	width: 13%;
+	margin-top: 10%;
+		float: left;
+}
+
+#side .all ul {}
+
+#side .all ul li {
+	text-align: center;
+	padding: 10px 0;
+}
+
+#side .all ul li a {
+	display: block;
+	padding: 10px 0;
+	color: #fff;
+	font-size: 10pt;
+}
+
+#side .all ul li ul.submenu {display: none;}
+
+/* none을 지우면 submenu가 나타납니다.*/
+
+#brand{
+	float: left;
+	margin-top: 10%;
+	width: 80%;
+}
+
+#bg{
+	background: #ccc;
+	width: 85%;
+	position: relative;
+	float: left;
+	padding : 0.5% 0.5%;
+	margin-left: 7%;
+}
+
+.btitle{
+	width: 16%;
+	float: left;
+	position: relative;
+	margin-left: 1%;
+}
+
+.btitle h8{
+	color: #fff
+}
+
+.button{
+	color: #fff;
+	background: #ccc;
+	border-style: none;
+	border: 2px solid #fff;
+	margin-left: 7%;
+}
+
+.bnav{
+	float: right;
+	width: 82%;
+	margin: 0 auto;
+}
+
+.bnav ul{
+	float: left;
+	background: #fff;
+	width: 100%;
+	margin-bottom: 0;
+	margin-top: 0.5%;
+	
+	
+}
+
+.bnav ul li{
+	float: left;
+	margin-right: 3%;
+}
+
+.bnav ul li a{
+	color: #000;
+	font-size: 11pt
+}
+
+.bnav ul li.sq{
+	font-size: 9pt;
+	margin-top: 0.5%;
+}
+
+.nomb{
+	float: left;
+	width: 80%;
+	margin-top: 2%;
+	margin-left: 11%;
+	
+}
+
+.nomb ul{
+	width: 70%;
+	margin: 0 auto;
+	float: right;
+	
+}
+
+.nomb ul li{
+	float: left;
+	text-align: center;
+	width: 7%;
+	display: flex;
+}
+
+.nomb ul li a {
+	color: #444;
+	font-size: 11pt;
+	font-weight: 500;
+}
