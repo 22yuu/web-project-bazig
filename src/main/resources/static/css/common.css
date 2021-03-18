@@ -138,31 +138,46 @@ body { padding: 0px; margin:0px;}
 
 /* Main Banner and Sub banner area */
 
-#main_banner_frame {
+#banner-frame {
 	border: 3px solid;
 	width : 100%;
 	height :500px;
 	box-sizing: border-box;
 }
 
-#main_banner_frame .inner_main_div {
-	border : 3px solid;
+#main_banner{
+	border : 3px solid red;
 	width: 70%;
 	height: 100%;
-	border-color: red;
-	text-align: center;
-	float:left;
+	float: left;
 	margin:0px;
 	padding:0px;
 	box-sizing: border-box;
 }
 
-#main_banner_frame .inner_sub_div {
+#main_banner .swiper-slide {
+	text-align:center;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
+	font-size: 24px;
+	font-weight:500;
+	background-color:#ddd;
+}
+
+#main_banner .swiper-slide img {
+	box-shadow:0 0 5px #555;
+}
+
+#sub_banner {
 	border: 3px solid;
 	width : 30%;
 	height: 100%;
 	border-color: blue;
 	text-align: center;
+	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+	align-items:center; /* 위아래 기준 중앙정렬 */
+	justify-content:center; /* 좌우 기준 중앙정렬 */
 	float: right;
 	box-sizing: border-box;
 }

@@ -25,4 +25,9 @@ public class ProductController {
 	public String raffleCollection() {
 		return "product/raffleCollection";
 	}
+	
+	@GetMapping("/auth/test")
+	public String test_rollingBanner() {
+		return "layout/test_rollingBanner";
+	}
 }

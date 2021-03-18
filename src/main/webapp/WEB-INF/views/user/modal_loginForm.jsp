@@ -22,9 +22,6 @@ $(document).ready(function(){
 		<!-- <button class="kakao-login-btn" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=34c4dd1b843bc1b79acfc1b6c119f767&redirect_uri=http://13.209.41.213:8080/auth/kakao/callback&response_type=code'"><img src="/images/kakao-icon.png">카카오 로그인</button> -->
 		<button class="naver-login-btn" onclick="location.href='/oauth2/authorization/naver'"><img src="/images/login_icon/login_naver_long.png"></button>
 		<button class="google-login-btn" onclick="location.href='/oauth2/authorization/google'">구글 로그인 </button>
-
-		<hr style="margin:20px 0;">
-		
 	</header>
 	<hr style="margin:20px 0;">
 	<form action="/auth/loginProc" method="post">

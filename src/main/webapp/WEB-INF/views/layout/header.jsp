@@ -21,11 +21,16 @@
 <!-- stylesheet -->
 <link rel="stylesheet" type="text/css" href="/css/common.css">
 <link rel="stylesheet" type="text/css" href="/css/lightslider.css">
-<link rel="stylesheet" href="/css/loginForm.css">
+<link rel="stylesheet" type="text/css" href="/css/loginForm.css">
+<link rel="stylesheet" type="text/css" href="/css/swiper/swiper-bundle.css" />
+<link rel="stylesheet" type="text/css" href="/css/swiper/swiper-bundle.min.css" />
 
+<script  type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script  type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <!-- js -->
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/lightslider.js"></script>
+
 
 
 <script>

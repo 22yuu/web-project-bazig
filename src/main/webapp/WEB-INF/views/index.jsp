@@ -28,29 +28,28 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<%-- <%
-     try {
-        int checkPermit = (int)pageContext.getSession().getAttribute("permit");
-        if (checkPermit != 1)
-        {
-           response.sendRedirect("testLogin.jsp");
-        }
-     } catch (Exception e) {
-        response.sendRedirect("testLogin.jsp");
-     } finally {
-        
-     }
-  %> --%>
+
 	<!-- Main banner, Sub banner -->
-	<div id="main_banner_frame">
-		<div class="inner_main_div">
-			이벤트/기획전 배너
+	<div id="banner-frame">
+		<!-- Slider main container -->
+		<div id="main_banner" class="swiper-container">
+		  <!-- Additional required wrapper -->
+		  <div class="swiper-wrapper">
+		    <!-- Slides -->
+		    <div class="swiper-slide"><a><img>Image 1</a></div>
+		    <div class="swiper-slide"><a><img>Image 2</a></div>
+		    <div class="swiper-slide"><a><img>Image 3</a></div>
+   		    <div class="swiper-slide"><a><img>Image 4</a></div>
+		    <div class="swiper-slide"><a><img>Image 5</a></div>
+		    <div class="swiper-slide"><a><img>Image 6</a></div>
+		  </div>
+		  <!-- If we need pagination -->
+		  <div class="swiper-pagination"></div>
 		</div>
-	
-		<div class="inner_sub_div">
+		
+	  <div id="sub_banner">
 			인스타 연동 배너
-		</div>
-		<div id="bullets"></div>
+	  </div>
 	</div>
 
 	 <!-- Best items Slider -->
@@ -1000,7 +999,9 @@ $(document).ready(function(){
 
 <%-- <%@ include file="layout/side_bar.jsp" %> --%>
 <%@ include file="layout/footer.jsp" %>
+<script type="text/javascript" src="/js/swiper.js"></script>
 </body>
 <!-- script-link -->
 <script type="text/javascript" src="/js/script.js"></script>
+
 </html>
