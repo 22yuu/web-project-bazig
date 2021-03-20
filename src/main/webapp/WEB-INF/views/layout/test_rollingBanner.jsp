@@ -55,6 +55,43 @@
 		box-shadow:0 0 5px #555;
 	}
 	
+	.social-login{
+		width: 500px;
+		margin : 10px auto;
+		border : 1px solid red;
+	}
+	.social-login h2 {
+		display:block;
+	    position: relative;
+	    margin: 0;
+	    text-align: center;
+	    line-height: 18px;
+	}
+
+	.social-login .social-login-text {
+	    display: inline-block;
+	    max-width: 70%;
+	    padding: 0 12px;
+	    font-weight: 400;
+	    font-size: 13px;
+	    color: #808893;
+	    word-wrap: break-word;
+	    vertical-align: top;
+	    background: red;
+	    line-height:20px;
+	    z-index: 1;
+	}
+	.social-login h2:before {
+	    display: block;
+	    position: absolute;
+	    top: 50%;
+	    left: 0;
+	    width: 100%;
+	    height: 1px;
+	    background-color: hsla(215,8%,54%,.3);
+	    transform: translateY(-50%);
+	    content: "";
+	}
 </style>
 
 <script type="text/javascript">
@@ -105,6 +142,10 @@
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
+</div>
+
+<div data-8 class="social-login">
+	<h2><span class="social-login-text">SNS 로그인 / 가입</span></h2>
 </div>
 <!-- <script>
 var swiper = new Swiper('#test-slide', {

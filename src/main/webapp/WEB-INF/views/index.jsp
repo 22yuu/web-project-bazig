@@ -13,6 +13,51 @@ $(document).ready(function(){
 	$(".slide-img a").click('click', function(){
 		location.href="/auth/productDetail";
 	});
+	
+
+	$('#top_btn').click(function () {
+		$('html').animate({
+			scrollTop:0
+			}, 800);
+		return false;
+		});
+	var scrollHeight = $(document).height();
+	$('#bottom_btn').click(function() {
+		$('html').animate({
+			scrollTop: scrollHeight
+			}, 800);
+		return false;
+		});
+
+    $('#side-cart').mouseenter(function(event) {
+        $('.side_content').css("display","block");
+        $('.side_content').append("<h4 id='title'>장바구니<span class='cnt'></span></h4>");
+    });
+    $('#side-cart').mouseleave(function(event) {
+        $('.side_content').css("display","none");
+        $('.side_content h4').remove();
+    });
+
+    
+    $('#side-zzim').mouseenter(function(event) {
+        $('.side_content').css("display","block");
+        $('.side_content').append("<h4 id='title'>찜 목록<span class='cnt'></span></h4>");
+    });
+    $('#side-zzim').mouseleave(function(event) {
+        $('.side_content').css("display","none");
+        $('.side_content h4').remove();
+    });
+
+    
+    $('#side-recent-view').mouseenter(function(event) {
+        $('.side_content').css("display","block");
+        $('.side_content').append("<h4 id='title'>최근 본 상품<span class='cnt'></span></h4>");
+    });
+    $('#side-recent-view').mouseleave(function(event) {
+        $('.side_content').css("display","none");
+        $('.side_content h4').remove();
+    });
+	
 	$(function() {
 		$("#best_item_nav_menus li").mouseenter(function(event) {
  			$(this).find("div").parent().css("background", "#FFF");
@@ -25,10 +70,54 @@ $(document).ready(function(){
 		});
 	});
 });
+
+
 </script>
 </head>
 <body>
 
+    <!-- 오른쪽 사이드바 -->
+    <div class="wrapper">
+        <div class="side_content">
+
+            <div class="paging">
+                <span class="paging_cnt">
+                    <span class="now" id="cur_p_cnt">0</span>
+                    /
+                    <span id="tol_p_cnt">0</span>
+                </span>
+                <a href="" class="btn_prev"></a>
+                <a href="" class="btn_next"></a>
+            </div>
+        </div>
+        <div class="sidebar_frame">
+            <div class="quick_menu">
+                <!-- 장바구니 -->
+                <div id="side-cart">
+                    <a href="#" class="cart-btn" title="장바구니"></a>
+                </div>
+                <!-- 찜 목록 -->
+                <div id="side-zzim">
+                    <a href="#" class="zzim-btn" title="찜 목록"></a>
+                </div>
+                <!-- 최근 본 상품 -->
+                <div id="side-recent-view">
+                    <a href="#" class="recent-view-btn" title="최근 본 상품"></a>
+                </div>
+                <!-- button-->
+                <div>
+                    <a id="top_btn" class="go-top-btn"></a>
+                </div>
+                <div>
+                    <a id="bottom_btn" class="go-bottom-btn"></a>
+                </div>
+            </div>
+            <div class="chat_menu">
+                <a href="#"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 오른쪽 사이드바 끝 -->
 	<!-- Main banner, Sub banner -->
 	<div id="banner-frame">
 		<!-- Slider main container -->
@@ -995,7 +1084,6 @@ $(document).ready(function(){
 			</ul>
 		</section>
 	</div>
-	
 
 <%-- <%@ include file="layout/side_bar.jsp" %> --%>
 <%@ include file="layout/footer.jsp" %>

@@ -384,6 +384,148 @@ body { padding: 0px; margin:0px;}
 #new_item_frame ul li a { font-size: 16px; display: block; min-width: 40px; margin: 0 6px; color: black;}
 
 
+/* Right side bar CSS area */
+.sidebar_frame {
+    width: 50px;
+    height: auto;
+    float:left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.quick_menu {
+    border: 1px solid #ddd;
+    background-color:#fff;
+}
+
+.quick_menu div {
+    border-top: 1px solid #ddd
+}
+.quick_menu .cart-btn {
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url(../images/sidebar_images/add_cart.png) no-repeat;
+    background-size: cover;
+    margin:  17px 0 10px ;
+}
+
+.quick_menu .zzim-btn {
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url(../images/sidebar_images/heart.png) no-repeat;
+    background-size: cover;
+    margin:  17px 0 10px ;
+}
+
+.quick_menu .recent-view-btn {
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url(../images/sidebar_images/recent_view.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    margin:  17px 0 10px ;
+}
+
+.quick_menu .go-top-btn {
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url(../images/sidebar_images/top_btn.png) no-repeat;
+    background-size: cover;
+    margin:  17px 0 10px ;
+}
+
+.quick_menu .go-bottom-btn {
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url(../images/sidebar_images/bottom_btn.png) no-repeat;
+    background-size: cover;
+    margin:  17px 0 10px ;
+}
+
+.sidebar_frame .chat_menu {
+    width:40px;
+    height:40px;
+    display: inline-block;
+    background:url(../images/sidebar_images/KKT-1.png) no-repeat;
+    background-size: 100% 100%;
+    margin:  25px 0 10px 
+}
+
+.side_content {
+    width: 373px;
+    height: 444px;
+    border: 1px solid #ddd;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    float:left;
+    display:none;
+}
+
+.side_content h4 {
+    margin: 30px 0 0 49px;
+    color: #272727;
+    font-size: 18px;
+    letter-spacing: -1.5px;
+    font-family: '맑은고딕','Malgun Gothic','Apple SD Gothic Neo'
+}
+
+.side_content ul {
+    padding:20px 0;
+    width:373px;
+    height: 330px;
+    float: left;
+}
+
+.side_content .paging {
+    margin: 0 auto;
+    bottom: 13px;
+    width: 70px;
+    height: 26px;
+    position: absolute;
+    left: 50%;
+    margin-left: -37px;
+    text-align: center;
+}
+
+.side_content .paging .paging_cnt {
+    width: 56px;
+    height: 13px;
+    display: inline-block;
+    margin-top: 11px;
+    font-size: 12px;
+    color: #272727;
+}
+
+.side_content .paging .btn_prev {
+    width: 10px;
+    height: 13px;
+    background:url(../images/sidebar_images/left-arrow.png) center center no-repeat;
+    left:0;
+    top:13px;
+    position: absolute;
+}
+
+.side_content .paging .btn_next {
+    width: 10px;
+    height: 13px;
+    background:url(../images/sidebar_images/right-arrow.png) center center no-repeat;
+    right:0;
+    top:13px;
+    position: absolute;
+}
+
+.wrapper {
+    top:352px;
+    position:fixed;
+    right:1px;
+    z-index:999;
+}
+
+
 /* footer CSS area */
 #footer {
 	left : 0;
