@@ -91,7 +91,7 @@ cursor: pointer;
 .popup .divider {margin:20px 0; color:#e8e8e8}
 .popup button { margin: 20px 0 0; cursor: pointer;}
 
-.popup { position: fixed; left:50%; top:50%; padding: 52px 60px 60px; width: 500px; height: 825px; transform: 
+.popup { position: fixed; left:50%; top:50%; padding: 52px 60px 60px; width: 500px; height: 700px; transform: 
 translate(-50%, -50%); box-sizing: border-box; z-index: 99; background: #fff;}
 
 .popup .close { position: absolute; right: 15px; top:15px; 
@@ -100,20 +100,51 @@ width:24px; height:24px; background: url(../images/close-btn.png) no-repeat; obj
 .popup h2{ padding: 0; margin: 0 0 12px; font-size: 20px; color:#222; text-align: center; line-height: 20px;}
 .popup p { font-size: 13px; margin: 0 0 20px;}
 
-.kakao-login-btn { width:100%; min-height:48px; border:0 solid transparent; background-color:#fff; margin:0px; ; object-fit:scale-down;} /*background-color:#fee500*/
-.kakao-login-btn img {width:380px; height:48px; object-fit:fill;}
-/*.kakao-login-btn:hover { background-color: rgba(240,215,0,0.85); border:0 solid transparent;}*/
+.social-login-frame { width:300px; height: auto; display:block; position:relative; margin:0 auto;}
+.social-login-frame a {width:48px; min-height:48px; float:left; margin:17px 10px 10px;}
+.kakao-login-btn {  background:url(../images/login_icon/sns_logo/KKT-1.png) no-repeat; background-size:cover;}
+.naver-login-btn { background:url(../images/login_icon/sns_logo/N-1.png) no-repeat; background-size:cover; }
+.google-login-btn { background:url(../images/login_icon/sns_logo/G-1.png) no-repeat; background-size:cover; }
+.facebook-login-btn  { background:url(../images/login_icon/sns_logo/f-1.png) no-repeat; background-size:cover; }
 
+.social-login{
+	width: 100%;
+	margin : 10px auto;
+	display:inline-block;
+}
+.social-login h2 {
+	display:block;
+    position: relative;
+    margin: 0;
+    text-align: center;
+    line-height: 18px;
+}
+   .social-login h2::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: hsla(215,8%,54%,.3);
+    transform: translateY(-50%);
+    content: "";
+}
 
-.naver-login-btn { width:100%; min-height:48px; font-weight:400; background-color: #fff; border:0 solid transparent;
-	/* background-image:url("../images/login_icon/login_naver_long.png"); background-repeat: no-repeat; background-size:cover; */ }
-.naver-login-btn img {width:380px; height:48px; object-fit:fill;}
-.google-login-btn {width:100%; min-height:48px; font-weight:400; background-color: red; color:#fff;border:0 solid transparent;}
-
-.divider {margin:20px 0; display: inline-block; }
-.divider .line { display: inline-block; position: absolute; left:0; width:100%; height:1px; background-color: hsla(215,8%,54%,.3);transform: translateY(-50%);content: "";
-} ::before
-
+.social-login h2 span{
+    display: inline-block;
+       position: relative;
+    max-width: 70%;
+    padding: 0 12px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #808893;
+    word-wrap: break-word;
+    vertical-align: top;
+    background: #fff;
+    z-index: 1;
+}
+	
 .input-wrapper { margin:13px 0; text-align: left; box-sizing: border-box;}
 .input-wrapper .label { display:block; line-height:20px; margin: 6px 0 7px;}
 .input-wrapper a.forgotten-password {position: absolute; text-decoration: none; right:52px;}
@@ -121,7 +152,7 @@ width:24px; height:24px; background: url(../images/close-btn.png) no-repeat; obj
 input[type=text],
 input[type=password] {width:100%; height:48px; font-size:13px; color:#373737; border: 1px solid #e8e8e8; background: #fff; text-decoration: none; text-indent: 20px;}
 
-.login-btn { width: 100%; height:48px; padding: 16px; background-color: #222; border:1px solid #222; color:#fff}
+.login-btn { width: 100%; height:48px; padding: 16px; background-color: #343A40;; border:1px solid #343A40;; color:#fff}
 .login-btn:hover { background-color: #707070; border-color: #707070}
 .member-btn { width: 100%; height:48px; padding: 16px; background-color: #fff; border: 1px solid #222;}
 .membership-info { text-align: center; margin-top:12px; text-decoration: none; text-transform: none; display:block;}

@@ -17,13 +17,19 @@ $(document).ready(function(){
 	<header class="header">
 		<h2>로그인</h2>
 		<p> 다양한 할인 혜택과 이벤트, 보너스 쿠폰을 놓치지 마세요 </p>
-		<button class="kakao-login-btn" onclick="location.href='/oauth2/authorization/kakao'"><img src="/images/login_icon/kakao_login_medium_wide.png"></button>
+		<div class="social-login-frame">
+		<a class="kakao-login-btn" onclick="location.href='/oauth2/authorization/kakao'"></a>
 		<!-- <button class="kakao-login-btn" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=34c4dd1b843bc1b79acfc1b6c119f767&redirect_uri=http://localhost:8080/auth/kakao/callback&response_type=code'"><img src="/images/kakao-icon.png">카카오 로그인</button> -->
 		<!-- <button class="kakao-login-btn" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=34c4dd1b843bc1b79acfc1b6c119f767&redirect_uri=http://13.209.41.213:8080/auth/kakao/callback&response_type=code'"><img src="/images/kakao-icon.png">카카오 로그인</button> -->
-		<button class="naver-login-btn" onclick="location.href='/oauth2/authorization/naver'"><img src="/images/login_icon/login_naver_long.png"></button>
-		<button class="google-login-btn" onclick="location.href='/oauth2/authorization/google'">구글 로그인 </button>
+		<a class="naver-login-btn" onclick="location.href='/oauth2/authorization/naver'"></a>
+		<a class="google-login-btn" onclick="location.href='/oauth2/authorization/google'"></a>
+		<a class="facebook-login-btn" onclick=""></a>
+		</div>
+
 	</header>
-	<hr style="margin:20px 0;">
+    <div data-8 class="social-login">
+        <h2><span class="social-login-text">SNS 로그인 / 가입</span></h2>
+    </div>
 	<form action="/auth/loginProc" method="post">
 	<div class="content">
 		<div class="input-wrapper">
