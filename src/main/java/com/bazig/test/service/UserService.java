@@ -46,6 +46,7 @@ public class UserService {
 			System.out.println("UserService:회원가입():"+ e.getMessage());
 		}
 	}
+	
 	@Transactional
 	public void 회원수정(User user) {
 		// 수정시에는 영속성 컨텍스트 User 오브젝트를 영속화시키고, 영속화된 User 오브젝트를 수정

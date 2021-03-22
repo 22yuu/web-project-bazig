@@ -29,34 +29,48 @@ body { padding: 0px; margin:0px;}
 	height:100px;
 	text-align: center;
 	background-color: #ffa005;
-	border: 3px solid;
-	border-color: #ffa005;
 }
 
-#header .frame { 
-	margin: 0 auto;
-	clear: both;
-	overflow: hidden;
+@media screen and (min-width: 769px){
+	#header .frame{
+		padding: 37px 30px;
+	}
+}
+
+#header .frame {
 	position: relative;
 	text-align: center;
 	padding: 37px 30px;
-	border: 3px solid;
+}
+.frame {
+	width:100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	clear: both;
+	padding:0px 30px;
+	overflow: hidden;
 }
 
-#header .main-logo-area {
-	line-height: 21px;
-	display: block;
-	float: left;
-	margin-top: 7px;
+@media screen and (min-width: 769px){
+	 #header .main-logo {
+		display: block;
+	    float: left;
+	    margin-top: 7px;
+	}	
+}
+#header .main-logo {
+	display: inline-block;
+    margin: 0;
+    line-height: 21px;
 }
 
-#header .main-logo-area .main-logo {
-	position: absolute;
-	top: 50%;
-	left: 0px;
-	margin-top: -32px;
-	margin-left:50px;
+#header .main-logo img {
+	width: 155px;
+	height: 50px;
+	object-fit:100% 100%;
 }
+
+
 
 #header .search-bar-area { 
 	clear: both;
@@ -66,8 +80,8 @@ body { padding: 0px; margin:0px;}
 	display: inline-block!important;
 	width: calc(100% - 570px);
 	max-width: 496px;
-	margin: 0 20px 0 50px;
-	border: 3px solid;
+	margin: 0 0px 0 50px;
+	left:30%;
 }
 #header .search-bar-area form .search_input { 
 	display: block;
@@ -100,7 +114,6 @@ body { padding: 0px; margin:0px;}
 	display: block;
 	float: right;
 	margin-top: 0;
-	border: 3px solid;
 }
 
 #header .upper-menu-area a {
@@ -109,10 +122,20 @@ body { padding: 0px; margin:0px;}
 	line-height: 45px;
 	color: #000;
 	letter-spacing: -1px;
+	padding:0 10px;
+}
+
+#header .upper-menu-area a::after{
+	content: "|";
+	float:right;
+	margin-right:-17px;
+}
+#header .upper-menu-area a:last-child::after {
+	content: "";
 }
 
 /* navigation */
-#nav {padding: 0px 30px; background: #343A40; border:3px solid #222;}
+#nav {padding: 0px 30px; background: #343A40;}
 #main-nav-wrapper {
 	width: 80%; margin: 0 auto; list-style: none; padding: 0; text-align: center; font-size: 0; display: table;
 }
@@ -139,14 +162,12 @@ body { padding: 0px; margin:0px;}
 /* Main Banner and Sub banner area */
 
 #banner-frame {
-	border: 3px solid;
 	width : 100%;
 	height :500px;
 	box-sizing: border-box;
 }
 
 #main_banner{
-	border : 3px solid red;
 	width: 70%;
 	height: 100%;
 	float: left;

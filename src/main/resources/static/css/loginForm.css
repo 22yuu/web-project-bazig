@@ -40,15 +40,17 @@ box-sizing: border-box;
 	font-weight: 400;
 	line-height: 1.5;
 	color: #212529;
-	text-align: left;
+	text-align: center;
 	box-sizing: border-box;
 	width: 100%;
 	padding-right: 15px;
 	padding-left: 15px;
-	margin-top:30px;
-	margin-right: auto;
-	margin-left: auto;
-	max-width: 960px;
+	margin:0 auto;
+	max-width: 580px;
+}
+
+.loginForm-logo-area {
+	margin: 37px 0 30px;
 }
 .form-group { 
 font-family: inherit;	
@@ -63,6 +65,7 @@ margin-bottom: 1rem;
 
 .btn-primary {
 margin: 0;
+width:100%;
 font-family: inherit;
 overflow: visible;
 text-transform: none;
@@ -78,9 +81,32 @@ line-height: 1.5;
 border-radius: .25rem;
 transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 color: #fff;
-background-color: #007bff;
-border-color: #007bff;
+background-color: #343A40;
+border-color: #343A40;
 cursor: pointer;
+}
+
+.find-info{
+	margin: 20px 0 0;
+}
+
+.find-info a {
+	display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    font-size: 13px;
+    color: #202429;
+    line-height: 18px;
+}
+
+.find-info a::after {
+	content:"|";
+	float:right;
+	margin-right:-17px;	
+}
+
+.find-info a:last-child::after {
+	content:"";
 }
 /* End 로그인 폼*/
 
@@ -100,26 +126,55 @@ width:24px; height:24px; background: url(../images/close-btn.png) no-repeat; obj
 .popup h2{ padding: 0; margin: 0 0 12px; font-size: 20px; color:#222; text-align: center; line-height: 20px;}
 .popup p { font-size: 13px; margin: 0 0 20px;}
 
-.social-login-frame { width:300px; height: auto; display:block; position:relative; margin:0 auto;}
-.social-login-frame a {width:48px; min-height:48px; float:left; margin:17px 10px 10px;}
-.kakao-login-btn {  background:url(../images/login_icon/sns_logo/KKT-1.png) no-repeat; background-size:cover;}
-.naver-login-btn { background:url(../images/login_icon/sns_logo/N-1.png) no-repeat; background-size:cover; }
-.google-login-btn { background:url(../images/login_icon/sns_logo/G-1.png) no-repeat; background-size:cover; }
-.facebook-login-btn  { background:url(../images/login_icon/sns_logo/f-1.png) no-repeat; background-size:cover; }
+
+
+
+.input-wrapper { margin:13px 0; text-align: left; box-sizing: border-box;}
+.input-wrapper .label { display:block; line-height:20px; margin: 6px 0 7px;}
+.input-wrapper a.forgotten-password {position: absolute; text-decoration: none; right:52px;}
+.input-wrapper span { color:#de4f41;}
+input[type=text],
+input[type=password] {width:100%; height:48px; font-size:13px; color:#373737; border: 1px solid #e8e8e8; background: #fff; text-decoration: none; text-indent: 20px;}
+
+.login-btn { width: 100%; height:48px; padding: 16px; background-color: #343A40;; border:1px solid #343A40; color:#fff}
+.login-btn:hover { background-color: #707070; border-color: #707070}
+.member-btn { width: 100%; height:48px; padding: 16px; background-color: #fff; border: 1px solid #222;}
+.membership-info { text-align: center; margin-top:12px; text-decoration: none; text-transform: none; display:block;}
+
+.dim { position: fixed; left:0; top:0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index:98;}
+/* End 모달 로그인 폼 css*/
+
+/* 소셜 로그인 css*/
+
+/* 소셜 로그인 버튼 css*/
+.social-login-frame { width:400px; height: auto; display:block; position:relative; margin:0 auto;}
+.social-login-frame a {width:64px; min-height:64px; float:left; margin:17px 15px 10px;}
+.modal-social-login-frame { width:300px; height: auto; display:block; position:relative; margin:0 auto;}
+.modal-social-login-frame a {width:48px; min-height:48px; float:left; margin:17px 10px 10px;}
+.kakao-login-btn {  background:url(../images/login_icon/sns_logo/KKT-1.png) no-repeat; background-size:100% 100%;;}
+.naver-login-btn { background:url(../images/login_icon/sns_logo/N-1.png) no-repeat; background-size:100% 100%;; }
+.google-login-btn { background:url(../images/login_icon/sns_logo/G-1.png) no-repeat; background-size:100% 100%;; }
+.facebook-login-btn  { background:url(../images/login_icon/sns_logo/f-1.png) no-repeat; background-size:100% 100%;; }
 
 .social-login{
 	width: 100%;
 	margin : 10px auto;
+	margin-top:120px;
 	display:inline-block;
 }
-.social-login h2 {
+.modal-social-login{
+	width: 100%;
+	margin : 10px auto;
+	display:inline-block;
+}
+.modal-social-login h2, .social-login h2 {
 	display:block;
     position: relative;
     margin: 0;
     text-align: center;
     line-height: 18px;
 }
-   .social-login h2::before {
+.modal-social-login h2::before, .social-login h2::before {
     display: block;
     position: absolute;
     top: 50%;
@@ -131,9 +186,9 @@ width:24px; height:24px; background: url(../images/close-btn.png) no-repeat; obj
     content: "";
 }
 
-.social-login h2 span{
+.modal-social-login h2 span, .social-login h2 span{
     display: inline-block;
-       position: relative;
+    position: relative;
     max-width: 70%;
     padding: 0 12px;
     font-weight: 400;
@@ -144,18 +199,4 @@ width:24px; height:24px; background: url(../images/close-btn.png) no-repeat; obj
     background: #fff;
     z-index: 1;
 }
-	
-.input-wrapper { margin:13px 0; text-align: left; box-sizing: border-box;}
-.input-wrapper .label { display:block; line-height:20px; margin: 6px 0 7px;}
-.input-wrapper a.forgotten-password {position: absolute; text-decoration: none; right:52px;}
-.input-wrapper span { color:#de4f41;}
-input[type=text],
-input[type=password] {width:100%; height:48px; font-size:13px; color:#373737; border: 1px solid #e8e8e8; background: #fff; text-decoration: none; text-indent: 20px;}
-
-.login-btn { width: 100%; height:48px; padding: 16px; background-color: #343A40;; border:1px solid #343A40;; color:#fff}
-.login-btn:hover { background-color: #707070; border-color: #707070}
-.member-btn { width: 100%; height:48px; padding: 16px; background-color: #fff; border: 1px solid #222;}
-.membership-info { text-align: center; margin-top:12px; text-decoration: none; text-transform: none; display:block;}
-
-.dim { position: fixed; left:0; top:0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index:98;}
-/* End 모달 로그인 폼 css*/
+/* 소셜 로그인 css 끝*/

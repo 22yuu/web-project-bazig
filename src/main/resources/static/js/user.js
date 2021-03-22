@@ -2,16 +2,15 @@ let index = {
 		
 	init:function(){
 		$("#btn-save").on("click",()=>{
-			birthdate = $("#yyyy").val() + $("#mmmm").val() + $("#dddd").val();
 			this.save();
 		});
 		$("#btn-update").on("click", ()=>{ // function(){}, ()=>{} this를 바인딩하기 위해서!
-			birthdate = $("#yyyy").val() + $("#mmmm").val() + $("#dddd").val();
+			bornDate = $("#yyyy").val() + $("#mm").val() + $("#dd").val();
 			this.update();
 
 		});
 		$("#btn-OAuth-save").on("click", ()=>{ // function(){}, ()=>{} this를 바인딩하기 위해서!
-			birthdate = $("#yyyy").val() + $("#mmmm").val() + $("#dddd").val();
+			bornDate = $("#yyyy").val() + $("#mm").val() + $("#dd").val();
 			this.oauth_save();
 		});
 	},
@@ -29,7 +28,10 @@ let index = {
 			mobile:$("#mobile").val(),
 			email:$("#email").val(),
 			address:$("#address").val(),
-			birthdate:birthdate,
+			born_yyyy:$("#yyyy").val(),
+			born_mm:$("#mm").val(),
+			born_dd:$("#dd").val(),
+			born_date:$("#yyyy").val()+$("#mm").val()+$("#dd").val(),
 			registed: registed
 		};
 		
@@ -50,8 +52,7 @@ let index = {
 	},
 	
 	oauth_save:function(){
-		//alert('user의 save함수 호출됨');
-		
+		//alert('user의 save함수 호출됨');		
 
 		let data = {
 			id:$("#id").val(),
@@ -62,7 +63,10 @@ let index = {
 			mobile:$("#mobile").val(),
 			email:$("#email").val(),
 			address:$("#address").val(),
-			birthdate:birthdate,
+			born_yyyy:$("#yyyy").val(),
+			born_mm:$("#mm").val(),
+			born_dd:$("#dd").val(),
+			born_date:$("#yyyy").val()+$("#mm").val()+$("#dd").val(),
 		};
 		
 		// ajax 호출시 디폴트가 비동기 호출
@@ -92,7 +96,10 @@ let index = {
 			mobile:$("#mobile").val(),
 			email:$("#email").val(),
 			address:$("#address").val(),
-			birthdate:birthdate,
+			born_yyyy:$("#yyyy").val(),
+			born_mm:$("#mm").val(),
+			born_dd:$("#dd").val(),
+			born_date:$("#yyyy").val()+$("#mm").val()+$("#dd").val(),
 		};
 		
 		// ajax 호출시 디폴트가 비동기 호출
@@ -112,7 +119,7 @@ let index = {
 	},
 }
 
-var birthdate="";
+var bornDate="";
 var registed=0;
 index.init()
 

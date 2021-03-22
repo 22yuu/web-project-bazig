@@ -67,9 +67,8 @@ $(document).ready(function(){
 			</div>
 			<!-- Main logo, search-bar, upper menu -->
 			<div class="frame">
-				<div class="main-logo-area">
-					<h1 class="main-logo"><a href="/"><img src="/images/logo.png" alt="BAZIG"></a></h1>
-				</div>
+				<h1 class="main-logo"><a href="/"><img src="/images/logo.png" alt="BAZIG"></a></h1>
+
 	
 				<div class="search-bar-area">
 					<form>
@@ -80,20 +79,20 @@ $(document).ready(function(){
 				<c:choose>
 					<c:when test="${empty principal || empty principal.user.registed}">
 						<div class="upper-menu-area">
-							<a href="#" target="_blank">베이직소개</a> |
-							<a href="#" target="_blank">입점문의</a> |
-							<a href="/cart">장바구니</a> |
-							<a href="/mypage">마이페이지</a> |
-							<a id="login" class="login" data-toggle="modal" data-target="#modal" role="button" href="#">로그인</a> |
+							<a href="#" target="_blank">베이직소개</a>
+							<a href="#" target="_blank">입점문의</a>
+							<a href="/cart">장바구니</a>
+							<a href="/mypage">마이페이지</a>
+							<a id="login" class="login" data-toggle="modal" data-target="#modal" role="button" href="#">로그인</a>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div class="upper-menu-area">
-							<a href="#" target="_blank">베이직소개</a> |
-							<a href="#" target="_blank">입점문의</a> |
-							<a href="/cart">장바구니</a> |
-							<a id="mypage" href="/mypage">마이페이지</a> |
-							<a id="logout" class="logout" href="/logout">로그아웃</a> |
+							<a href="#" target="_blank">베이직소개</a>
+							<a href="#" target="_blank">입점문의</a>
+							<a href="/cart">장바구니</a>
+							<a id="mypage" href="/mypage">마이페이지</a>
+							<a id="logout" class="logout" href="/logout">로그아웃</a>
 						</div>
 					</c:otherwise>
 				</c:choose>			

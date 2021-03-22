@@ -52,7 +52,7 @@
 		<div class="input-wrapper"> 
 			<label>생년월일<span>*</span></label><br>
 			<input type="text" id="yyyy" placeholder="년(4자)" size="4" maxlength="4" style="width:150px;">
-			<select id="mmmm" style="width:150px;">
+			<select id="mm" style="width:150px;">
 			<option>월</option>
 			<option value="01">01</option>
 			<option value="02">02</option>
@@ -67,7 +67,7 @@
 			<option value="11">11</option>
 			<option value="12">12</option>
 			</select>
-			<input type="text" id="dddd" placeholder="일" style="width:150px;">
+			<input type="text" id="dd" placeholder="일" style="width:150px;">
 		</div>
 </form>
 <button id="btn-save" class="btn-join-done">회원가입</button>

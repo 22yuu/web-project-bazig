@@ -52,13 +52,22 @@ public class User {
 	@Column(length = 100)
 	private String address;
 	
+	@Column(length = 4)
+	private String born_yyyy;
+	
+	@Column(length = 2)
+	private String born_mm;
+	
+	@Column(length = 2)
+	private String born_dd;
+	
 	@Column(length = 100)
-	private String birthdate;
+	private String born_date;
 	
 	@ColumnDefault("'user'")
 	private String role; // Enum을 쓰는게 좋음, // admin, user, manager
 	
-	private String oauth; // kakao, google, naver
+	private String oauth; // kakao, google, naver, facebook
 	
 	@ColumnDefault("0")
 	private String registed;

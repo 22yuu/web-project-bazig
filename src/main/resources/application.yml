@@ -14,7 +14,7 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
     url: jdbc:mariadb://localhost:3306/bazigtest
     username: root
     password: root
-    
+        
   jpa:
     open-in-view: true
     hibernate:
@@ -36,7 +36,14 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
             scope:
             - email
             - profile
-          
+            
+          facebook:
+            client-id: 715575785778215
+            client-secret: 483e42b2a2742a74c9129e563327e436
+            scope:
+            - email
+            - public_profile
+            
           naver:
             client-id: FiJuVwaSpzXE6264oUOR
             client-secret: m21JAUPY1C
@@ -68,12 +75,6 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
            token-uri: https://kauth.kakao.com/oauth/token
            user-info-uri: https://kapi.kakao.com/v2/user/me
            user-name-attribute: kakao_account
-          #facebook:
-            #client-id:
-            #client-secret:
-            #scope:            
-            #- email
-            #- public_profile
 
 OAuth2:
   key: bazig1234
