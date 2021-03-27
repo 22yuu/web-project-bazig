@@ -12,6 +12,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -36,13 +37,16 @@ public class PrincipalOauth2UserService  extends DefaultOAuth2UserService{
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	
+	@Autowired //DI
+	private BCryptPasswordEncoder encoder;
+	
 	@Value("${OAuth2.key}")
 	private String OAuth2Key; // 절대 노출되면 안됨!!!!!!!!!!!!
 	
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-		System.out.println("getClientRegistration:"+userRequest.getClientRegistration()); //registationId로 어떤 Oauth로 로그인 했는지 확인가능
-		System.out.println("getAccessToken:"+userRequest.getAccessToken().getTokenValue());
+		System.out.println("UserService():getClientRegistration:"+userRequest.getClientRegistration()); //registationId로 어떤 Oauth로 로그인 했는지 확인가능
+		System.out.println("UserService():getAccessToken:"+userRequest.getAccessToken().getTokenValue());
 
 		OAuth2User oauth2User = super.loadUser(userRequest);
 		
@@ -61,14 +65,14 @@ public class PrincipalOauth2UserService  extends DefaultOAuth2UserService{
 			oAuth2UserInfo = new KakaoUserInfo(oauth2User.getAttributes());
 		}
 		
-		String provider = oAuth2UserInfo.getProvider(); // google, naver, kakao
+		String provider = oAuth2UserInfo.getProvider(); // google, naver, kakao, facebook
 		String providerId = oAuth2UserInfo.getProviderId();
 		String memberId = provider+"_"+providerId; 
 		String username = oAuth2UserInfo.getName();
 		String password = OAuth2Key;
 		String email = oAuth2UserInfo.getEmail();
 		
-		
+		System.out.println("oauth 로그인 provider : " + provider);
 		User oauth2UserBuilder = User.builder()
 				.memberId(memberId)
 				.username(username)
@@ -85,7 +89,16 @@ public class PrincipalOauth2UserService  extends DefaultOAuth2UserService{
 			System.out.println("가입되지 않았습니다. 자동 회원가입처리");
 			userService.회원가입(oauth2UserBuilder);
 		} else {
-			System.out.println(originUser.getId());	
+			try {
+				System.out.println("해당 유저는 이미 존재합니다."+originUser.getId());
+				System.out.println("해당 유저는 이미 존재합니다."+originUser.getOauth());
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("oauth login error : " + e.getMessage());
+			}
+			
+			return new PrincipalDetails(originUser, oauth2User.getAttributes()); // Authentication 객체에 오브젝트가 저장이 된다.
+			
 		}
 		
 		System.out.println("***Oauth2UserSerivce***");

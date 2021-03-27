@@ -67,10 +67,11 @@ public class User {
 	@ColumnDefault("'user'")
 	private String role; // Enum을 쓰는게 좋음, // admin, user, manager
 	
+	@Column()
 	private String oauth; // kakao, google, naver, facebook
 	
 	@ColumnDefault("0")
-	private String registed;
+	private int registed;
 	
 	@CreationTimestamp
 	private Timestamp createDate;

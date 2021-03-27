@@ -21,7 +21,7 @@
 	<div class="find-info">
 		<a>아이디 찾기</a>
 		<a>비밀번호 찾기</a>
-		<a>회원가입</a>
+		<a href="/auth/joinForm">회원가입</a>
 	</div>
 	<div data-8 class="social-login">
         <h2><span class="social-login-text">SNS 로그인 / 가입</span></h2>

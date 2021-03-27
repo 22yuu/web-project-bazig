@@ -34,7 +34,12 @@ public class UserApiController {
 	public ResponseDto<Integer> save(@RequestBody User user) {
 		System.out.println("UserApiController: save 호출됨");
 		userService.회원가입(user);
-		System.out.println(user);
+		System.out.println("회원가입 getPassword: " + user.getPassword());
+		
+		
+//		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getMemberId(), OAuth2Key)); 
+//		SecurityContextHolder.getContext().setAuthentication(authentication); // bad credential error
+//		System.out.println(user);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
@@ -51,30 +56,19 @@ public class UserApiController {
 		System.out.println("user.getPassword() : " + user.getPassword());
 		System.out.println("user.getMemberId() : " + user.getMemberId());
 		
+		System.out.println("****Put Mapping /user*****");
+		System.out.println("oauth principal : " + oAuthentication.getPrincipal());
 		
-		PrincipalDetails OauthPrincipal = (PrincipalDetails)oAuthentication.getPrincipal(); 
-		User OauthUser = (User) OauthPrincipal.getUser();
-		OauthUser.setPassword(OAuth2Key);
-		String Oauth = OauthUser.getOauth();
 		
-		if(Oauth == null || Oauth == "") {
-			// 일반 로그인 사용자
-			userService.회원수정(user);
-			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getMemberId(), user.getPassword())); 
-			SecurityContextHolder.getContext().setAuthentication(authentication);
-		} else {
-			// 써드 파티 로그인 사용자
-			userService.회원수정(OauthUser);
-			System.out.println("OauthUser id : " + OauthUser.getMemberId() + "OauthUser pwd : "+ OauthUser.getPassword());
-			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(OauthUser.getMemberId(), OauthUser.getPassword())); 
-			SecurityContextHolder.getContext().setAuthentication(authentication);
-		}
-		
-
+		// 일반 로그인 사용자
+		userService.회원수정(user);
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getMemberId(), user.getPassword())); 
+		SecurityContextHolder.getContext().setAuthentication(authentication);
 		// 세션에 접근할 필요가 없음
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}
+	
 //	@PostMapping("/api/user/login")
 //	public ResponseDto<Integer> login(@RequestBody User user, HttpSession session){
 //		System.out.println("UserApiController:login 호출됨.");

@@ -39,12 +39,6 @@ public class UserController {
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
-	
-//	@GetMapping("/")
-//	public String login() {
-//		System.out.println("******************logging************************");
-//		return "login";
-//	}
 		
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {

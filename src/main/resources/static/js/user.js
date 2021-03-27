@@ -5,12 +5,10 @@ let index = {
 			this.save();
 		});
 		$("#btn-update").on("click", ()=>{ // function(){}, ()=>{} this를 바인딩하기 위해서!
-			bornDate = $("#yyyy").val() + $("#mm").val() + $("#dd").val();
 			this.update();
 
 		});
 		$("#btn-OAuth-save").on("click", ()=>{ // function(){}, ()=>{} this를 바인딩하기 위해서!
-			bornDate = $("#yyyy").val() + $("#mm").val() + $("#dd").val();
 			this.oauth_save();
 		});
 	},
@@ -31,8 +29,7 @@ let index = {
 			born_yyyy:$("#yyyy").val(),
 			born_mm:$("#mm").val(),
 			born_dd:$("#dd").val(),
-			born_date:$("#yyyy").val()+$("#mm").val()+$("#dd").val(),
-			registed: registed
+			born_date:$("#yyyy").val()+$("#mm").val()+$("#dd").val()
 		};
 		
 		// ajax 호출시 디폴트가 비동기 호출

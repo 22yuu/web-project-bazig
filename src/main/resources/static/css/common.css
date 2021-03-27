@@ -135,7 +135,7 @@ body { padding: 0px; margin:0px;}
 }
 
 /* navigation */
-#nav {padding: 0px 30px; background: #343A40;}
+#nav {padding: 0px 30px; background: #343A40; border:3px solid #222}
 #main-nav-wrapper {
 	width: 80%; margin: 0 auto; list-style: none; padding: 0; text-align: center; font-size: 0; display: table;
 }

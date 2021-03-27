@@ -90,7 +90,7 @@
 		</div>
 </form>
 <c:choose>
-	<c:when test="${empty principal.user.registed}">
+	<c:when test="${principal.user.registed eq 0}">
 		<button id="btn-OAuth-save" class="btn-join-done">회원가입</button>
 	</c:when>
 	<c:otherwise>

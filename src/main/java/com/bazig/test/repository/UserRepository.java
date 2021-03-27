@@ -9,7 +9,7 @@ import com.bazig.test.model.User;
 //DAO
 //자동으로 bean등록이 된다.
 //따라서 @Repository 생략이 가능하다.
-public interface UserRepository extends JpaRepository<User, Integer>{
+public interface UserRepository extends JpaRepository<User, Integer>{ // User의 CRUD를 책임질 Repository
 	//User findByMemberIdAndPassword(String username, String password);
 	Optional<User> findByMemberId(String memberId);
 }

@@ -36,7 +36,7 @@ public class UserService {
 			user.setPassword(encPassword);
 			user.setConfirm_password(encPassword);
 			if(user.getOauth() == null || user.getOauth() == "") {
-				user.setRegisted("1");
+				user.setRegisted(1);
 			}
 			userRepository.save(user);
 			
@@ -57,7 +57,8 @@ public class UserService {
 			System.out.println(user.getId());
 			return new IllegalArgumentException("회원찾기 실패");
 		});
-		
+		System.out.println("회원수정(): user mobile :  " + user.getMobile());
+		System.out.println("회원수정(): user gender :  " + user.getGender());
 		String rawPassword = user.getPassword();
 		String encPassword = encoder.encode(rawPassword);
 		persistance.setPassword(encPassword);
@@ -65,8 +66,12 @@ public class UserService {
 		persistance.setAddress(user.getAddress());
 		persistance.setMobile(user.getMobile());
 		persistance.setGender(user.getGender());
-		persistance.setRegisted("1");
-		
+		persistance.setBorn_yyyy(user.getBorn_yyyy());
+		persistance.setBorn_mm(user.getBorn_dd());
+		persistance.setBorn_dd(user.getBorn_dd());
+		persistance.setBorn_date(user.getBorn_date());
+		persistance.setRegisted(1);
+		userRepository.save(persistance);
 		// Validate 체크 -> post 공격 때문에 서버단에서 수정 못하게 막음 
 //		if(persistance.getOauth()==null || persistance.getOauth().equals("")) {
 //			// oauth값이 없으면 수정 가능

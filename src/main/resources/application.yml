@@ -12,8 +12,8 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/bazigtest
-    username: root
-    password: root
+    username: bazigtest
+    password: qpdlwlrm12
         
   jpa:
     open-in-view: true
@@ -30,7 +30,11 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
     serialization:
       fail-on-empty-beans: false
 
-  security:    oauth2:      client:        registration:          google:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
             client-id: 94313580269-gd9df20s54solq0k61nn94qsm57c1ehf.apps.googleusercontent.com
             client-secret: FKVFvcQatN3HrwE8asYtrelQ
             scope:

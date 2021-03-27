@@ -22,22 +22,28 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler{
 //		
 //	}
 //	
+	public void aaa() {
+		
+			
+	}
+	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		
-		System.out.println("authentication.getPrincipal() : " + authentication.getPrincipal());
+		
+		System.out.println("onAuthenticationSuccess():authentication.getPrincipal() : " + authentication.getPrincipal());
 		
 		PrincipalDetails principalDetails = (PrincipalDetails)authentication.getPrincipal();
 //		System.out.println("principalDetails.getAttributes() : " +  principalDetails.getAttributes()); 
 //		System.out.println("principalDetails.getUser() : " +  principalDetails.getUser()); 
 		
 		String oAuthClient = principalDetails.getUser().getOauth();
-		String registed = principalDetails.getUser().getRegisted();
-		System.out.println("registed : " + registed);
+		int registed = principalDetails.getUser().getRegisted();
+		System.out.println("onAuthenticationSuccess():Oauth2 : " + oAuthClient +" registed : " + registed);
 //		System.out.println("Oauth Client : " +  user.getOauth());
 		
-		if((oAuthClient == null || oAuthClient == "") || registed == "1") {
+		if(registed == 1) {
 			response.sendRedirect("/");
 		} else {
 			response.sendRedirect("/mypage");
