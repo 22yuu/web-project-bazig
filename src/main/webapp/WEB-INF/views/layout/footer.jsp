@@ -14,7 +14,7 @@
 		</div>
 		
 		<div class="footer_sec_2">
-				<span>1544-8998</span>
+				<span style="font-size:32px">1544-8998</span><br>
 				<span>평일 09 : 00 ~ 18 : 00 | 공휴일휴무</span>
 				<div class="footer-sns-area">
 				<a href="https://m.facebook.com/BAZIG-111005253850108/" target="_blank"> <img src="/images/facebook_logo.png"></a>

@@ -25,12 +25,14 @@
 <link rel="stylesheet" type="text/css" href="/css/swiper/swiper-bundle.css" />
 <link rel="stylesheet" type="text/css" href="/css/swiper/swiper-bundle.min.css" />
 
+
+<!-- js -->
 <script  type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script  type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<!-- js -->
+
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/lightslider.js"></script>
-
+<script type="text/javascript" src="/js/dropdown.js"></script>
 
 
 <script>
@@ -109,7 +111,7 @@ $(document).ready(function(){
 		<!-- nav -->
 		<div id="nav">
 			<ul id="main-nav-wrapper">
-				<li id="nav_home" class="swiper-slide-active"> <a href="/"> <span> 홈 </span> </a>
+				<li id="nav_home" class="swiper-slide-active"> <a href="/"> <span> 홈 </span> </a></li>
 				<li id="nav_brand" class="swiper-slide-active"> <a href="#"> <span> 브랜드 </span> </a>
 				<li id="nav_shoppingMall" class="swiper-slide-active"> <a href="#"> <span> 쇼핑몰 </span> </a>
 				<li id="nav_life" class="swiper-slide-active"> <a href="#"> <span> 라이프 </span> </a>
@@ -118,6 +120,6 @@ $(document).ready(function(){
 				<li id="nav_store" class="swiper-slide-active"> <a href="#"> <span> 스토어 </span> </a>
 			</ul>
 		</div>
-
+		<div id=sub-nav-wrapper> 메인 서브 메뉴</div>
 		<!--  end navigation -->
 	<!-- end header -->

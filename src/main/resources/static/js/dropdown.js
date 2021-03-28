@@ -1,13 +1,31 @@
 $(function() {
-	$("#best_item_nav_menus li").mouseenter(function(event) {
-		$(this).find("div").parent().css("background", "#FFF");
-		$(this).find("div").parent().children("a").css("color", "#000");
-		$(this).find("div").slideDown("fast");
+	
+	$("#main-nav-wrapper li").mouseenter(function(event) {
+		$(this).children("a").children("span").css("border-bottom","3px solid #fff");
+		$("#sub-nav-wrapper").css("display","block");
 	}).mouseleave(function() {
-		$(this).find("div:visible").slideUp(50, function() {
-			// #menubar-menus li:hover 처리를 하지 않을 경우 아래 라인 활성,
-			$(this).parent().css("background", "#666");
-			$(this).parent().children("a").css("color", "#FFF");
-		});
+		$(this).children("a").children("span").css("border-bottom","none");
+		$("#sub-nav-wrapper").css("display","none");
 	});
+	
+	
+	
+	$("#best_item_nav_menus li").mouseenter(function(event) {
+		$(this).children("a").children("span").css("border-bottom","3px solid #222");
+		$("#best-item-sub-nav").css("display","block");
+	}).mouseleave(function() {
+		$(this).children("a").children("span").css("border-bottom","none");
+		$("#best-item-sub-nav").css("display","none");
+	});
+	
+	$("#new_item_nav_menu li").mouseenter(function(event) {
+		$(this).children("a").children("span").css("border-bottom","3px solid #222");
+		$("#new-item-sub-nav").css("display","block");
+	}).mouseleave(function() {
+		$(this).children("a").children("span").css("border-bottom","none");
+		$("#new-item-sub-nav").css("display","none");
+	});
+	
+	
+	
 });

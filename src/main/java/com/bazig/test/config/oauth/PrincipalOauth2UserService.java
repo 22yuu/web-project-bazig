@@ -1,5 +1,3 @@
-
-
 package com.bazig.test.config.oauth;
 
 

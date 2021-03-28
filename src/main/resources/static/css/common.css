@@ -147,16 +147,17 @@ body { padding: 0px; margin:0px;}
 	/* 서브 메뉴 영역이 가로 방향으로 100% 보이는 것을 원치 않을 때 아래 라인을 활성 */
 	/*position: relative;*/
 }
-/* #main-nav-wrapper > li > div {
+#main-nav-wrapper > li > a > span { padding:10px 0 10px; border-bottom-width: 3px;}
+/*#main-nav-wrapper > li > div {
 	position: absolute; background: rgba(52,58,64,0.25); color:#222; left: 0; width: 100%; top: auto; display: none;
 	padding: 18px 0; z-index: 10;
-} */
+}*/
 
-/* #sub-nav { border:3px solid #222;}
-#sub-nav-wrapper > li > div {
-	position: absolute; background: rgba(52,58,64,0.25); color:#222; left: 0; width: 100%; top: auto; display: none;
-	padding: 18px 0; z-index: 10;
-} */
+/*#sub-nav { border:3px solid #222;}*/
+#sub-nav-wrapper {
+	position: absolute; background: rgba(52,58,64,0.25); color:#222; left: 0; width: 100%; height:700px; top: auto; display: none;
+	padding: 18px 0; z-index: 10; text-align: center; line-height: 700px; font-size:50px; 
+}
 /* End Header */
 
 /* Main Banner and Sub banner area */
@@ -235,10 +236,12 @@ body { padding: 0px; margin:0px;}
 .best_item_nav_menu { margin:0px; padding:0px; list-style: none; position: relative; width: 100%; height: 100%; z-index:1; display: flex; }
 .best_item_nav_menu > li { margin: 0px; list-style: none; flex-shrink: 0; width:100%; height: 100%; position: relative; transition-property: transform, -webkit-transform; width: 14.2%!important; padding: 18px 0; }
 .best_item_nav_menu > li > a {font-size: 16px; display: block; min-width: 40px; margin: 0 6px; color: black; }
+.best_item_nav_menu > li > a > span { padding:10px 0 5px; border-bottom-width: 3px;}
 
-/* .best-item-sub-menu { display: none;} */
-/* .best_item_nav_menu > li { border-bottom : none;}
-.best_item_nav_menu > li > div { width:100%; height:100%;top: auto; left:0; background:rgba(255,255,255, 0.25); border:1px solid #222; display:none; padding: 50px 0; z-index:999;} */
+/* Best Item Sub Menu CSS Area */
+#best-item-sub-frame { position:relative;  width: 100%; max-width:1300px; margin:0 auto;}
+#best-item-sub-nav {position:absolute; background: rgba(255,255,255,0.8); color:#222; left: 0; width: 100%; max-width:1300px; margin: 0px auto;	clear: both; height:700px; top: auto; display: none; padding: 18px 0; z-index: 999; text-align: center; line-height: 700px; font-size:50px;}
+
 
 
 /* best item slider */
@@ -385,7 +388,7 @@ body { padding: 0px; margin:0px;}
 }
 
 /* new item navigation */
-.new_item_nav {
+#new_item_nav {
 	border-top: 3px solid black;
 	border-bottom: 3px solid gray;
 	text-align: center;
@@ -399,10 +402,15 @@ body { padding: 0px; margin:0px;}
 	width: 100%;
 }
 
-.new_item_nav_menu { margin:0px; padding:0px; list-style: none; position: relative; width: 100%; height: 100%; z-index:1; display: flex; }
+#new_item_nav_menu { margin:0px; padding:0px; list-style: none; position: relative; width: 100%; height: 100%; z-index:1; display: flex; }
 
 #new_item_frame ul li { margin: 0px; list-style: none; flex-shrink: 0; width:100%; height: 100%; position: relative; transition-property: transform, -webkit-transform; width: 14.2%!important; padding: 18px 0; }
 #new_item_frame ul li a { font-size: 16px; display: block; min-width: 40px; margin: 0 6px; color: black;}
+#new_item_frame > li > a > span { padding:10px 0 5px; border-bottom-width: 3px;}
+
+/* Best Item Sub Menu CSS Area */
+#new-item-sub-frame { position:relative;  width: 100%; max-width:1300px; margin:0 auto;}
+#new-item-sub-nav {position:absolute; background: rgba(255,255,255,0.8); color:#222; left: 0; width: 100%; max-width:1300px; margin: 0px auto;	clear: both; height:700px; top: auto; display: block; padding: 18px 0; z-index: 999; text-align: center; line-height: 700px; font-size:50px;}
 
 
 /* Right side bar CSS area */
@@ -451,8 +459,8 @@ body { padding: 0px; margin:0px;}
 }
 
 .quick_menu .go-top-btn {
-    width:20px;
-    height:20px;
+    width:24px;
+    height:24px;
     display: inline-block;
     background: url(../images/sidebar_images/top_btn.png) no-repeat;
     background-size: cover;
@@ -460,14 +468,13 @@ body { padding: 0px; margin:0px;}
 }
 
 .quick_menu .go-bottom-btn {
-    width:20px;
-    height:20px;
+    width:24px;
+    height:24px;
     display: inline-block;
     background: url(../images/sidebar_images/bottom_btn.png) no-repeat;
     background-size: cover;
-    margin:  17px 0 10px ;
+        margin:  17px 0 10px ;
 }
-
 .sidebar_frame .chat_menu {
     width:40px;
     height:40px;
@@ -551,6 +558,7 @@ body { padding: 0px; margin:0px;}
 #footer {
 	left : 0;
 	bottom: 0;
+	width:100%;
 	box-sizing: border-box;
 	padding: 40px 0;
 	margin-top: 50px;
@@ -565,7 +573,7 @@ body { padding: 0px; margin:0px;}
 .footer_sec_1 a { color: #969696; text-align: right; box-sizing: border-box; width: auto; margin: 0; padding: 0 30px; line-height: 3em}
 
 .footer_sec_2 { font-weight: 700; font-size: 1.5em; float: left; padding : 10px 10px 10px 30px; box-sizing:border-box; width:1900px;}
-.footer_sec_2 span {font-size : 0.5em;}
+.footer_sec_2 span {font-size : 0.7em;}
 .footer_sec_2 a {margin-top:0px; float: right;}
 .footer_sec2 .footer-sns-area { float:right}
 

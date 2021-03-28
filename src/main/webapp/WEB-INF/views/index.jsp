@@ -14,7 +14,6 @@ $(document).ready(function(){
 		location.href="/auth/productDetail";
 	});
 	
-
 	$('#top_btn').click(function () {
 		$('html').animate({
 			scrollTop:0
@@ -109,7 +108,7 @@ $(document).ready(function(){
                     <a id="top_btn" class="go-top-btn"></a>
                 </div>
                 <div>
-                    <a id="bottom_btn" class="go-bottom-btn"></a>
+                    <a id="bottom_btn" class="go-bottom-btn" ></a>
                 </div>
             </div>
             <div class="chat_menu">
@@ -162,7 +161,14 @@ $(document).ready(function(){
 				</li>
 			</ul>
 		</div>
+		
 	</div>
+	<!-- Best Items Sub Menu -->
+	<div id="best-item-sub-frame">
+		<div id="best-item-sub-nav"> BEST 서브 메뉴 </div>
+	</div>
+	
+	
 	<div class="slider_frame">
 		<section class="slider">
 		<ul id="autoWidth" class="cs-hidden">
@@ -841,21 +847,26 @@ $(document).ready(function(){
 	</div>
 	
 	<!-- NEW Itmes -->
-	<!-- Best items Slider -->
+	<!-- NEW items Slider -->
 	 <div id="new_item_frame">
 	 	<span style="font-size:32px">NEW</span>
-	 	<div class="new_item_nav">
-	 		<ul class="new_item_nav_menu">
-					<li id="best_item_nav_1" class="swiper-slide-active"> <a href="#"> <span> NEW </span> </a>
-					<li id="best_item_nav_2" class="swiper-slide-active"> <a href="#"> <span> NEW </span> </a>
-					<li id="best_item_nav_3" class="swiper-slide-active"> <a href="#"> <span> NEW </span> </a>
-					<li id="best_item_nav_4" class="swiper-slide-active"> <a href="#"> <span> NEW </span> </a>
-					<li id="best_item_nav_5" class="swiper-slide-active"> <a href="#"> <span> NEW </span> </a>
-					<li id="best_item_nav_6" class="swiper-slide-active"> <a href="#"> <span> NEW </span> </a>
-					<li id="best_item_nav_7" class="swiper-slide-active"> <a href="#"> <span> NEW </span> </a>
+	 	<div id="new_item_nav">
+	 		<ul id="new_item_nav_menu">
+					<li> <a href="#"> <span> NEW </span> </a>
+					<li> <a href="#"> <span> NEW </span> </a>
+					<li> <a href="#"> <span> NEW </span> </a>
+					<li> <a href="#"> <span> NEW </span> </a>
+					<li> <a href="#"> <span> NEW </span> </a>
+					<li> <a href="#"> <span> NEW </span> </a>
+					<li> <a href="#"> <span> NEW </span> </a>
 			</ul>
 		</div>
 	</div>
+	<!-- NEW Items sub menu -->
+	<div id="new-item-sub-frame">
+		<div id="new-item-sub-nav"> NEW 서브 메뉴 </div>
+	</div>
+	
 	<div class="slider_frame">
 		<section class="slider">
 		<ul id="new-items-slider" class="cs-hidden">
