@@ -31,7 +31,6 @@
 		</div>
 		<div class="input-wrapper"> 
 			<label>성별<span>*</span></label><br>
-			
 			<input type="radio" name="gender" id="man" value="남자" class="select-gender"><label for="man"> 남성</label>
 			<input type="radio" name="gender" id="woman" value="여자" class="select-gender"><label for="woman" > 여성</label> 
 		</div>
@@ -75,5 +74,5 @@
 
 
 <script type="text/javascript" src="/js/user.js"></script>
-
+<script type="text/javascript" src="/js/joinform.js"></script>
 <%@ include file="../layout/footer.jsp" %>

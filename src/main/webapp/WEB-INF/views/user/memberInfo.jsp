@@ -36,7 +36,7 @@
 			<input id="password" class="pwd-input" type="password">
 		</div>
 		<c:choose>
-			<c:when test="${empty principal.user.registed}">
+			<c:when test="${principal.user.registed eq 0}">
 				<div class="input-wrapper"> 
 					<label>이름<span>*</span></label>
 					<input type="text" id="username" value="${principal.user.username}">

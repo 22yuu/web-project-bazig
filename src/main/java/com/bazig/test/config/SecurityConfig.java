@@ -74,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.formLogin()
 				.loginPage("/auth/loginForm/") // 허가되지 않은 url은 로그인 폼으로
 				.loginProcessingUrl("/auth/loginProc") // 스프링시큐리티가 해당 주소로 오는 로그인을 가로채서 대신 로그인을 해준다.
-				//.defaultSuccessUrl("/")// 로그인 성공하면 이동하는 디폴트 주소
+				.defaultSuccessUrl("/")// 로그인 성공하면 이동하는 디폴트 주소
 			.and()
 				.oauth2Login() // Tip. 코드X, (엑세스토큰+사용자프로필정보 O)
 				.loginPage("/auth/loginForm") 

@@ -28,6 +28,11 @@ public class UserService {
 		return user;
 	}
 	
+	@Transactional(readOnly=true)
+	public boolean 중복체크(String username) {
+		return userRepository.existsByMemberId(username); 
+	}
+	
 	@Transactional
 	public void 회원가입(User user) {
 		try {
@@ -62,6 +67,7 @@ public class UserService {
 		String rawPassword = user.getPassword();
 		String encPassword = encoder.encode(rawPassword);
 		persistance.setPassword(encPassword);
+		persistance.setUsername(user.getUsername());
 		persistance.setEmail(user.getEmail());
 		persistance.setAddress(user.getAddress());
 		persistance.setMobile(user.getMobile());

@@ -4,6 +4,7 @@ package com.bazig.test.controller.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -41,6 +42,13 @@ public class UserApiController {
 //		SecurityContextHolder.getContext().setAuthentication(authentication); // bad credential error
 //		System.out.println(user);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+	}
+	
+	@PostMapping("/auth/idCheck")
+	public boolean idoverlap(@RequestBody String memberId) { // id 중복 체크 함수
+		System.out.println("UserApiController: idoverlap 호출됨 memberId : " + memberId);
+		System.out.println("중복체크 : " + userService.중복체크(memberId));
+		return userService.중복체크(memberId);
 	}
 	
 	@PutMapping("/user")

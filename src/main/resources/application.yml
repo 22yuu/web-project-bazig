@@ -12,8 +12,8 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/bazigtest
-    username: bazigtest
-    password: qpdlwlrm12
+    username: root
+    password: root
         
   jpa:
     open-in-view: true
@@ -65,8 +65,8 @@ spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp
             - profile
             client-name: kakao
             authorization-grant-type: authorization_code
-            #redirect-uri: http://localhost:8080/login/oauth2/code/kakao
-            redirect-uri: http://13.209.41.213:8080/login/oauth2/code/kakao
+            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
+            #redirect-uri: http://13.209.41.213:8080/login/oauth2/code/kakao
             
         provider:
          naver:

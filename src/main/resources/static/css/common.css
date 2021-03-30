@@ -67,7 +67,7 @@ body { padding: 0px; margin:0px;}
 #header .main-logo img {
 	width: 155px;
 	height: 50px;
-	object-fit:100% 100%;
+	object-fit: cover;
 }
 
 
@@ -406,11 +406,11 @@ body { padding: 0px; margin:0px;}
 
 #new_item_frame ul li { margin: 0px; list-style: none; flex-shrink: 0; width:100%; height: 100%; position: relative; transition-property: transform, -webkit-transform; width: 14.2%!important; padding: 18px 0; }
 #new_item_frame ul li a { font-size: 16px; display: block; min-width: 40px; margin: 0 6px; color: black;}
-#new_item_frame > li > a > span { padding:10px 0 5px; border-bottom-width: 3px;}
+#new_item_nav_menu > li > a > span { padding:10px 0 5px; border-bottom-width: 3px;}
 
 /* Best Item Sub Menu CSS Area */
 #new-item-sub-frame { position:relative;  width: 100%; max-width:1300px; margin:0 auto;}
-#new-item-sub-nav {position:absolute; background: rgba(255,255,255,0.8); color:#222; left: 0; width: 100%; max-width:1300px; margin: 0px auto;	clear: both; height:700px; top: auto; display: block; padding: 18px 0; z-index: 999; text-align: center; line-height: 700px; font-size:50px;}
+#new-item-sub-nav {position:absolute; background: rgba(255,255,255,0.8); color:#222; left: 0; width: 100%; max-width:1300px; margin: 0px auto;	clear: both; height:700px; top: auto; display: none; padding: 18px 0; z-index: 999; text-align: center; line-height: 700px; font-size:50px;}
 
 
 /* Right side bar CSS area */

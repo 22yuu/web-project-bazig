@@ -36,19 +36,6 @@
 
 
 <script>
-/*서브메뉴*/
-/* $(function() {
-	$("#main-nav-wrapper li").mouseenter(function(event) {
-	  	$(this).find("div").parent().css("background", "#fff");
-		$(this).find("div").parent().children("a").css("color", "#000");
-		$(this).find("div").slideDown("fast");
-		$("#sub-nav-wrapper li").find("div").slideDown("fast");
-	}).mouseleave(function() {
-		$("#sub-nav").find("div:visible").slideUp(50, function() {
-			// #menubar-menus li:hover 처리를 하지 않을 경우 아래 라인 활성,
-		});
-	});
-}); */
 $(document).ready(function(){
 	$(".login").on('click', function() {
 		$(".modal-content").load("/auth/modal_loginForm")
@@ -69,7 +56,7 @@ $(document).ready(function(){
 			</div>
 			<!-- Main logo, search-bar, upper menu -->
 			<div class="frame">
-				<h1 class="main-logo"><a href="/"><img src="/images/logo.png" alt="BAZIG"></a></h1>
+				<h1 class="main-logo"><a href="/"><img src="/images/logo-bazig.jpg" alt="BAZIG"></a></h1>
 
 	
 				<div class="search-bar-area">

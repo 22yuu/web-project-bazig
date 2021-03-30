@@ -12,6 +12,7 @@ import com.bazig.test.model.User;
 public interface UserRepository extends JpaRepository<User, Integer>{ // User의 CRUD를 책임질 Repository
 	//User findByMemberIdAndPassword(String username, String password);
 	Optional<User> findByMemberId(String memberId);
+	public boolean existsByMemberId(String memberId);
 }
 
 //JPA Naming 쿼리 전략

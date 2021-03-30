@@ -3,12 +3,21 @@
 
 
 <!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
+<script>
+	function login_check() {
+		if(login_form.username.value == "") {
+			alert("아이디를 입력해주세요...!");
+		} else if (password.value =="") {
+			alert("패스워드를 입력해주세요...!");
+		}
+	}
 
+</script>
 <%@ include file="../layout/header.jsp" %>
 
 <div class="container">
-	<div class="loginForm-logo-area"><img src="/images/logo.png"></div>
-	<form action="/auth/loginProc" method="post"> <!-- 로그인하는 것은 Select 하는 것 -->
+	<div class="loginForm-logo-area"><img src="/images/logo-bazig.jpg"></div>
+	<form action="/auth/loginProc" method="post" name="login_form"> <!-- 로그인하는 것은 Select 하는 것 -->
 	  <div class="form-group">
 	    <input type="text" name="username" class="form-control" placeholder="아이디를 입력해주세요." id="memberId">
 	  </div>
@@ -16,7 +25,7 @@
 	  <div class="form-group">
 	    <input type="password" name="password" class="form-control" placeholder="비밀번호를 입력해주세요." id="password">
 	  </div>
-	  <button id="btn-login" class="btn btn-primary">로그인</button>
+	  <button id="btn-login" class="btn btn-primary" onclick="login_check()">로그인</button>
 	</form>
 	<div class="find-info">
 		<a>아이디 찾기</a>
