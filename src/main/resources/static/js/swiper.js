@@ -20,6 +20,18 @@ var swiper = new Swiper('#main_banner', {
 		pagination: {
 		    el: '.swiper-pagination',
 		    clickable : true,
-		    type: 'bullets',
+			/*type : 'bullets',*/
+			type : 'custom',
+			renderCustom: function(swiper, current, total) {
+				var customPaginationHtml = "";
+				for(var i = 0; i < total; i++){
+					if(i == (current - 1)) {
+						customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
+					} else {
+						customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
+					}
+				}
+				return customPaginationHtml; 
+			}
 		  },
 	})

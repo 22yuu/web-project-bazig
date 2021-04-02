@@ -11,6 +11,14 @@ $(document).ready(function(){
 		$(".dim").hide();
 		});
 });
+
+function login_check() {
+	if(login_form.username.value == "") {
+		alert("아이디를 입력해주세요...!");
+	} else if (password.value =="") {
+		alert("패스워드를 입력해주세요...!");
+	}
+}
 </script>
 
 <div class="popup">
@@ -46,7 +54,7 @@ $(document).ready(function(){
 		</div>
 		
 	</div>
-	<button id="btn-login" class="login-btn">로그인</button>
+	<button id="btn-login" class="login-btn" onclick="login_check()">로그인</button>
 	</form>
 	<button  id="btn-join" class="member-btn" onclick="location.href='/auth/joinForm'">회원 가입하기</button>
 	<a href="#" class="membership-info">멤버십 정보</a>

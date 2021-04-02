@@ -13,11 +13,25 @@ $(document).ready(function() {
             $('#autoWidth2').removeClass('cS-hidden');
         } 
     });
-    $('#new-items-slider').lightSlider({
+    $('#new-arrival-slider').lightSlider({
         autoWidth:true,
         loop:true,
         onSliderLoad: function() {
-            $('#autoWidth2').removeClass('cS-hidden');
+            $('#new-arrival-slider').removeClass('cS-hidden');
+        } 
+    });
+    $('#new-arrival-slider2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#new-arrival-slider2').removeClass('cS-hidden');
+        } 
+    });
+    $('#review-slider').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#review-slider').removeClass('cS-hidden');
         } 
     });
  });

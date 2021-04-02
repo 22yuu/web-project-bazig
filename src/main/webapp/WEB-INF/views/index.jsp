@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="layout/header.jsp" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" type="text/css" href="/css/loginForm.css">
 
 <script>
-$(document).ready(function(){		
+$(document).ready(function(){
 	$('button[name=login_need]').click(function(){
 		alert("로그인이 필요합니다.")
 	});
@@ -17,60 +18,59 @@ $(document).ready(function(){
 	$('#top_btn').click(function () {
 		$('html').animate({
 			scrollTop:0
-			}, 800);
+			});
 		return false;
 		});
 	var scrollHeight = $(document).height();
 	$('#bottom_btn').click(function() {
 		$('html').animate({
 			scrollTop: scrollHeight
-			}, 800);
+			});
 		return false;
 		});
 
+	 $('#top_btn').mouseenter(function(event) {
+		 $('.side_content').css("display","none");
+	    });
+	 $('#bottom_btn').mouseenter(function(event) {
+		 $('.side_content').css("display","none");
+	    });
+	$('.wrapper').mouseleave(function(event) {
+        $('.side_content').css("display","none");
+    });
+	
     $('#side-cart').mouseenter(function(event) {
+    	$('.side_content h4').remove();
         $('.side_content').css("display","block");
         $('.side_content').append("<h4 id='title'>장바구니<span class='cnt'></span></h4>");
     });
-    $('#side-cart').mouseleave(function(event) {
+    $('.side_content').mouseleave(function(event) {
         $('.side_content').css("display","none");
         $('.side_content h4').remove();
     });
 
     
     $('#side-zzim').mouseenter(function(event) {
+    	$('.side_content h4').remove();
         $('.side_content').css("display","block");
         $('.side_content').append("<h4 id='title'>찜 목록<span class='cnt'></span></h4>");
     });
-    $('#side-zzim').mouseleave(function(event) {
+    $('.side_content').mouseleave(function(event) {
         $('.side_content').css("display","none");
         $('.side_content h4').remove();
     });
 
     
     $('#side-recent-view').mouseenter(function(event) {
+    	$('.side_content h4').remove();
         $('.side_content').css("display","block");
         $('.side_content').append("<h4 id='title'>최근 본 상품<span class='cnt'></span></h4>");
     });
-    $('#side-recent-view').mouseleave(function(event) {
+    $('.side_content').mouseleave(function(event) {
         $('.side_content').css("display","none");
         $('.side_content h4').remove();
     });
-	
-	$(function() {
-		$("#best_item_nav_menus li").mouseenter(function(event) {
- 			$(this).find("div").parent().css("background", "#FFF");
-			$(this).find("div").parent().children("a").css("color", "#000");
-			$(this).find("div").slideDown("fast"); 
-		}).mouseleave(function() {
-			$(this).find("div:visible").slideUp(50, function() {
-				// #menubar-menus li:hover 처리를 하지 않을 경우 아래 라인 활성,
-			});
-		});
-	});
 });
-
-
 </script>
 </head>
 <body>
@@ -89,6 +89,7 @@ $(document).ready(function(){
                 <a href="" class="btn_next"></a>
             </div>
         </div>
+        
         <div class="sidebar_frame">
             <div class="quick_menu">
                 <!-- 장바구니 -->
@@ -104,11 +105,11 @@ $(document).ready(function(){
                     <a href="#" class="recent-view-btn" title="최근 본 상품"></a>
                 </div>
                 <!-- button-->
-                <div>
-                    <a id="top_btn" class="go-top-btn"></a>
+                <div id="top_btn">
+                    <a class="go-top-btn"></a>
                 </div>
-                <div>
-                    <a id="bottom_btn" class="go-bottom-btn" ></a>
+                <div id="bottom_btn">
+                    <a  class="go-bottom-btn"></a>
                 </div>
             </div>
             <div class="chat_menu">
@@ -117,6 +118,7 @@ $(document).ready(function(){
         </div>
     </div>
     <!-- 오른쪽 사이드바 끝 -->
+    
 	<!-- Main banner, Sub banner -->
 	<div id="banner-frame">
 		<!-- Slider main container -->
@@ -124,977 +126,1055 @@ $(document).ready(function(){
 		  <!-- Additional required wrapper -->
 		  <div class="swiper-wrapper">
 		    <!-- Slides -->
-		    <div class="swiper-slide"><a><img>Image 1</a></div>
+		    <div class="swiper-slide"><a><img src="images/index/mainimg-1.jpg"></a></div>
 		    <div class="swiper-slide"><a><img>Image 2</a></div>
 		    <div class="swiper-slide"><a><img>Image 3</a></div>
    		    <div class="swiper-slide"><a><img>Image 4</a></div>
 		    <div class="swiper-slide"><a><img>Image 5</a></div>
-		    <div class="swiper-slide"><a><img>Image 6</a></div>
+		    <!-- <div class="swiper-slide"><a><img>Image 6</a></div> -->
 		  </div>
 		  <!-- If we need pagination -->
 		  <div class="swiper-pagination"></div>
 		</div>
 		
 	  <div id="sub_banner">
-			인스타 연동 배너
+			<div class="sub_banner_container">
+				<a><img src="images/index/mainimg-2.jpg"></a>
+			</div>
 	  </div>
 	</div>
 
-	 <!-- Best items Slider -->
-	<div id="best_item_frame">
-	 	<span style="font-size:32px">BEST</span>
-	 	<div class="best_item_nav">
-	 		<ul id="best_item_nav_menus" class="best_item_nav_menu">
-				<li> <a href="#"> <span> BEST1 </span> </a>
-				</li>
-				<li> <a href="#"> <span> BEST2 </span> </a>
-				</li>
-				<li> <a href="#"> <span> BEST3 </span> </a>
-				</li>
-				<li> <a href="#"> <span> BEST4 </span> </a>
-				</li>
-				<li> <a href="#"> <span> BEST5 </span> </a>
-				</li>
-				<li> <a href="#"> <span> BEST6 </span> </a>
-				</li>
-				<li> <a href="#"> <span> BEST7 </span> </a>
-				</li>
-			</ul>
-		</div>
-		
-	</div>
-	<!-- Best Items Sub Menu -->
-	<div id="best-item-sub-frame">
-		<div id="best-item-sub-nav"> BEST 서브 메뉴 </div>
-	</div>
-	
-	
-	<div class="slider_frame">
-		<section class="slider">
-		<ul id="autoWidth" class="cs-hidden">
-			  <!-- 1 -->
-			  <li class="item-a">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 2 -->
-			  <li class="item-b">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 3 -->
-			  <li class="item-c">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 4 -->
-			  <li class="item-d">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 5 -->
-			  <li class="item-e">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						 <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 6 -->
-			  <li class="item-f">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-		</ul>
-		</section>
-	</div>
-	
-	<div class="slider_frame">
-		<section class="slider">
-		<ul id="autoWidth2" class="cs-hidden">
-			  <!-- 1 -->
-			  <li class="item-a">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-			  </li>
-			  <!-- 2 -->
-			  <li class="item-b">
-			  <!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						 <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 3 -->
-			  <li class="item-c">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 4 -->
-			  <li class="item-d">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 5 -->
-			  <li class="item-e">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						 <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 6 -->
-			  <li class="item-f">
-			  <!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-					</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			</ul>
-		</section>
-	</div>		
-	
-	
-	<!-- MD PICK -->
-	
-	<div class="md-pick-area">
-		<!-- title -->
-		<div class="md-pick">
-			MD PICK
-		</div>
-		<div class="md-pick-card-box-frame">
-		<ul>
-			<li>
-				<!-- 1 -->
-				<!-- md pick card box -->
-				<div class="md-pick-card_box">
-					<!-- md pick card thumb -->
-					<div class="md-pcik-card"></div>
-					<!-- card detail -->
-					<div class="md-pick-card-detail">
-					<p>
-						POSURE <br>
-						UT SEM NULLA PHARETRA DIAM.<br>
-						FAMES AC TURPIS EGESTAS<br>
-						MAECENAS.<br>
-						BIBENDUM NEQUE EGESTAS CONGUE<br>
-						QUISQUE EGESTAS DIAM.<br>
-						LAOREET ID DONEC ULTRICES<br>
-						TINCIDUNT<br>
-						ARCU NON SODALES<br>
-					</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<!-- 2 -->
-				<!-- md pick card box -->
-				<div class="md-pick-card_box">
-					<!-- md pick card thumb -->
-					<div class="md-pcik-card"></div>
-					<!-- card detail -->
-					<div class="md-pick-card-detail">
-					<p>
-						POSURE <br>
-						UT SEM NULLA PHARETRA DIAM.<br>
-						FAMES AC TURPIS EGESTAS<br>
-						MAECENAS.<br>
-						BIBENDUM NEQUE EGESTAS CONGUE<br>
-						QUISQUE EGESTAS DIAM.<br>
-						LAOREET ID DONEC ULTRICES<br>
-						TINCIDUNT<br>
-						ARCU NON SODALES<br>
-					</p>
-					</div>
-				</div>
-			</li>
-			</ul>
-		<!-- 3 -->
-		<ul>
-			<li>
-				<!-- 1 -->
-				<!-- md pick card box -->
-				<div class="md-pick-card_box">
-					<!-- md pick card thumb -->
-					<div class="md-pcik-card"></div>
-					<!-- card detail -->
-					<div class="md-pick-card-detail">
-					<p>
-						POSURE <br>
-						UT SEM NULLA PHARETRA DIAM.<br>
-						FAMES AC TURPIS EGESTAS<br>
-						MAECENAS.<br>
-						BIBENDUM NEQUE EGESTAS CONGUE<br>
-						QUISQUE EGESTAS DIAM.<br>
-						LAOREET ID DONEC ULTRICES<br>
-						TINCIDUNT<br>
-						ARCU NON SODALES<br>
-					</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<!-- 4 -->
-		<ul>
-				<li>
-					<!-- 1 -->
-					<!-- md pick card box -->
-					<div class="md-pick-card_box">
-						<!-- md pick card thumb -->
-						<div class="md-pcik-card"></div>
-						<!-- card detail -->
-						<div class="md-pick-card-detail">
-						<p>
-							POSURE <br>
-							UT SEM NULLA PHARETRA DIAM.<br>
-							FAMES AC TURPIS EGESTAS<br>
-							MAECENAS.<br>
-							BIBENDUM NEQUE EGESTAS CONGUE<br>
-							QUISQUE EGESTAS DIAM.<br>
-							LAOREET ID DONEC ULTRICES<br>
-							TINCIDUNT<br>
-							ARCU NON SODALES<br>
-						</p>
-						</div>
-					</div>
-				</li>
-			</ul>
+	    <div id="contents-wrapper">
+       <!-- Weekly Best -->
+        <div id="weekly-best-wrapper">
+            <div class="contents-title">
+                <span class="category-title">WEEKLY BEST</span><br>
+                <span class="category-sub-title">한 주의 실시간 판매 베스트 상품입니다.</span>
 
-		</div>
-		
-	</div>
-	
-	<div class="md-pick-area">
-		<!-- title -->
-		<div class="md-pick">
-			MD PICK
-		</div>
-		<div class="md-pick-card-box-frame">
-		<ul>
-			<li>
-				<!-- 1 -->
-				<!-- md pick card box -->
-				<div class="md-pick-card_box">
-					<!-- md pick card thumb -->
-					<div class="md-pcik-card"></div>
-					<!-- card detail -->
-					<div class="md-pick-card-detail">
-					<p>
-						POSURE <br>
-						UT SEM NULLA PHARETRA DIAM.<br>
-						FAMES AC TURPIS EGESTAS<br>
-						MAECENAS.<br>
-						BIBENDUM NEQUE EGESTAS CONGUE<br>
-						QUISQUE EGESTAS DIAM.<br>
-						LAOREET ID DONEC ULTRICES<br>
-						TINCIDUNT<br>
-						ARCU NON SODALES<br>
-					</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<!-- 2 -->
-				<!-- md pick card box -->
-				<div class="md-pick-card_box">
-					<!-- md pick card thumb -->
-					<div class="md-pcik-card"></div>
-					<!-- card detail -->
-					<div class="md-pick-card-detail">
-					<p>
-						POSURE <br>
-						UT SEM NULLA PHARETRA DIAM.<br>
-						FAMES AC TURPIS EGESTAS<br>
-						MAECENAS.<br>
-						BIBENDUM NEQUE EGESTAS CONGUE<br>
-						QUISQUE EGESTAS DIAM.<br>
-						LAOREET ID DONEC ULTRICES<br>
-						TINCIDUNT<br>
-						ARCU NON SODALES<br>
-					</p>
-					</div>
-				</div>
-			</li>
-			</ul>
-		<!-- 3 -->
-		<ul>
-			<li>
-				<!-- 1 -->
-				<!-- md pick card box -->
-				<div class="md-pick-card_box">
-					<!-- md pick card thumb -->
-					<div class="md-pcik-card"></div>
-					<!-- card detail -->
-					<div class="md-pick-card-detail">
-					<p>
-						POSURE <br>
-						UT SEM NULLA PHARETRA DIAM.<br>
-						FAMES AC TURPIS EGESTAS<br>
-						MAECENAS.<br>
-						BIBENDUM NEQUE EGESTAS CONGUE<br>
-						QUISQUE EGESTAS DIAM.<br>
-						LAOREET ID DONEC ULTRICES<br>
-						TINCIDUNT<br>
-						ARCU NON SODALES<br>
-					</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<!-- 4 -->
-		<ul>
-				<li>
-					<!-- 1 -->
-					<!-- md pick card box -->
-					<div class="md-pick-card_box">
-						<!-- md pick card thumb -->
-						<div class="md-pcik-card"></div>
-						<!-- card detail -->
-						<div class="md-pick-card-detail">
-						<p>
-							POSURE <br>
-							UT SEM NULLA PHARETRA DIAM.<br>
-							FAMES AC TURPIS EGESTAS<br>
-							MAECENAS.<br>
-							BIBENDUM NEQUE EGESTAS CONGUE<br>
-							QUISQUE EGESTAS DIAM.<br>
-							LAOREET ID DONEC ULTRICES<br>
-							TINCIDUNT<br>
-							ARCU NON SODALES<br>
-						</p>
-						</div>
-					</div>
-				</li>
-			</ul>
+                <div class="category-menu">
+                    <ul>
+                        <li>전체</li>
+                        <li>상의</li>
+                        <li>하의</li>
+                        <li>세트</li>
+                        <li>신발</li>
+                        <li>액세사리</li>
+                    </ul>
+                </div>
+            </div>
 
-		</div>
-	</div>
-	
-	<!-- NEW Itmes -->
-	<!-- NEW items Slider -->
-	 <div id="new_item_frame">
-	 	<span style="font-size:32px">NEW</span>
-	 	<div id="new_item_nav">
-	 		<ul id="new_item_nav_menu">
-					<li> <a href="#"> <span> NEW </span> </a>
-					<li> <a href="#"> <span> NEW </span> </a>
-					<li> <a href="#"> <span> NEW </span> </a>
-					<li> <a href="#"> <span> NEW </span> </a>
-					<li> <a href="#"> <span> NEW </span> </a>
-					<li> <a href="#"> <span> NEW </span> </a>
-					<li> <a href="#"> <span> NEW </span> </a>
-			</ul>
-		</div>
-	</div>
-	<!-- NEW Items sub menu -->
-	<div id="new-item-sub-frame">
-		<div id="new-item-sub-nav"> NEW 서브 메뉴 </div>
-	</div>
-	
-	<div class="slider_frame">
-		<section class="slider">
-		<ul id="new-items-slider" class="cs-hidden">
-			  <!-- 1 -->
-			  <li class="item-a">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 2 -->
-			  <li class="item-b">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 3 -->
-			  <li class="item-c">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 4 -->
-			  <li class="item-d">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 5 -->
-			  <li class="item-e">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						  <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			  <!-- 6 -->
-			  <li class="item-f">
-			  	<!-- box-slider -->
-				<div class="box">
-				<!-- img-box -->
-				<div class="overlay">
-					<div class="slide-img"><a><img></a></div>
-				</div>
-				<!-- detail-box -->
-				<div class="detail-box">
-				<!-- type -->
-				<div class="type">
-				<ul>
-					<li class="prd-name">ETIAM ERAT VELT</li>
-					<li class="sub-name">SCELERISQ</li>
-					<li class="prd-info">UE IN DICTUM NON<br>
-										 CONSECTETUR A EART.<br></li>
-					<li class="detail-price">
-						<del class="origin-price">69,000원 <br></del> 
-						<strong class="current-price">39,000원 </strong>
-					</li>
-					<li class="discount-percent"> 42%  </li>
-					<li class="zzim">
-						<c:choose>
-						 <c:when test="${empty principal}">
-						  	<button class="btn-zzim" name="login_need"></button>
-						  </c:when>
-						  <c:otherwise>
-							<button class="btn-zzim" name="btn-zzim"></button>
-						  </c:otherwise>
-						</c:choose>
-					</li>
-				</ul>
-				</div>
-				</div>
-				</div>
-			  </li>
-			</ul>
-		</section>
-	</div>
+            <div class="slider-frame">
+                <section class="slider">
+            <ul id="autoWidth" class="cs-hidden">
+              <!-- 1 -->
+              <li class="item-a">
+                    <!-- box-slider -->
+                    <div class="box">
+                        <!-- img-box -->
+                        <div class="overlay">
+                            <div class="slide-img"><a><img src="images/index/mainimg-12.jpg"></a></div>
+                        </div>
+                        <!-- detail-box -->
+                        <div class="detail-box">
+                        <!-- type -->
+                            <div class="type">
+                                <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                                <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                                <div class="prd-price">
+                                    <del class="origin-price">69,000원</del>
+                                    <strong class="current-price">39,000원 </strong>
+                                    <div class="discount-percent">42%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+              </li>
+              <!-- 2 -->
+              <li class="item-b">
+                    <!-- box-slider -->
+                    <div class="box">
+                        <!-- img-box -->
+                        <div class="overlay">
+                            <div class="slide-img"><a><img src="images/index/mainimg-13.jpg"></a></div>
+                        </div>
+                        <!-- detail-box -->
+                        <div class="detail-box">
+                        <!-- type -->
+                            <div class="type">
+                                <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                                <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                                <div class="prd-price">
+                                    <del class="origin-price">69,000원</del>
+                                    <strong class="current-price">39,000원 </strong>
+                                    <div class="discount-percent">42%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+              </li>
+              
+              <!-- 3 -->
+              <li class="item-c">
+              <!-- box-slider -->
+                    <div class="box">
+                        <!-- img-box -->
+                        <div class="overlay">
+                            <div class="slide-img"><a><img src="images/index/mainimg-14.jpg"></a></div>
+                        </div>
+                        <!-- detail-box -->
+                        <div class="detail-box">
+                        <!-- type -->
+                            <div class="type">
+                                <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                                <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                                <div class="prd-price">
+                                    <del class="origin-price">69,000원</del>
+                                    <strong class="current-price">39,000원 </strong>
+                                    <div class="discount-percent">42%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+              </li>
+        
+              <!-- 4 -->
+              <li class="item-d">
+                 <!-- box-slider -->
+                 <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-15.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+        
+              <!-- 5 -->
+              <li class="item-e">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+              <!-- 6 -->
+              <li class="item-f">
+                 <!-- box-slider -->
+                 <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+              <!-- 7 -->
+              <li class="item-g">
+                  <!-- box-slider -->
+                  <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+              
+                    <!-- 8 -->
+              <li class="item-h">
+              <!-- box-slider -->
+              <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </li>
+            </ul>
+            </section>
+            </div>
+
+            <div class="slider-frame">
+                <section class="slider">
+            <ul id="autoWidth2" class="cs-hidden">
+              <!-- 1 -->
+              <li class="item-a">
+                    <!-- box-slider -->
+                    <div class="box">
+                        <!-- img-box -->
+                        <div class="overlay">
+                            <div class="slide-img"><a><img src="images/index/mainimg-12.jpg"></a></div>
+                        </div>
+                        <!-- detail-box -->
+                        <div class="detail-box">
+                        <!-- type -->
+                            <div class="type">
+                                <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                                <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                                <div class="prd-price">
+                                    <del class="origin-price">69,000원</del>
+                                    <strong class="current-price">39,000원 </strong>
+                                    <div class="discount-percent">42%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+              </li>
+              <!-- 2 -->
+              <li class="item-b">
+                    <!-- box-slider -->
+                    <div class="box">
+                        <!-- img-box -->
+                        <div class="overlay">
+                            <div class="slide-img"><a><img src="images/index/mainimg-13.jpg"></a></div>
+                        </div>
+                        <!-- detail-box -->
+                        <div class="detail-box">
+                        <!-- type -->
+                            <div class="type">
+                                <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                                <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                                <div class="prd-price">
+                                    <del class="origin-price">69,000원</del>
+                                    <strong class="current-price">39,000원 </strong>
+                                    <div class="discount-percent">42%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+              </li>
+              
+              <!-- 3 -->
+              <li class="item-c">
+              <!-- box-slider -->
+                    <div class="box">
+                        <!-- img-box -->
+                        <div class="overlay">
+                            <div class="slide-img"><a><img src="images/index/mainimg-14.jpg"></a></div>
+                        </div>
+                        <!-- detail-box -->
+                        <div class="detail-box">
+                        <!-- type -->
+                            <div class="type">
+                                <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                                <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                                <div class="prd-price">
+                                    <del class="origin-price">69,000원</del>
+                                    <strong class="current-price">39,000원 </strong>
+                                    <div class="discount-percent">42%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+              </li>
+        
+              <!-- 4 -->
+              <li class="item-d">
+                 <!-- box-slider -->
+                 <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-15.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+        
+              <!-- 5 -->
+              <li class="item-e">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+              <!-- 6 -->
+              <li class="item-f">
+                 <!-- box-slider -->
+                 <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+              <!-- 7 -->
+              <li class="item-g">
+                  <!-- box-slider -->
+                  <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+              </li>
+              
+                    <!-- 8 -->
+              <li class="item-h">
+              <!-- box-slider -->
+              <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </li>
+            </ul>
+            </section>
+            </div>
+            
+        </div><!-- end Weekly Best-->
+        <!-- promotion -->
+        <div id="promotion-wrapper">
+            <div class="contents-title">
+                <span class="category-title">PROMOTION</span><br>
+                <span class="category-sub-title">프로모션 상품을 특별한 가격으로 만나보세요.</span>
+            </div>
+
+            <div class="promotion-contents">
+                <div class="promotion-left"><img src="images/index/mainimg-3.jpg"></div>
+                <div class="promotion-right"><img src="images/index/mainimg-4.jpg"></div>
+            </div>
+        </div> <!--end promotion -->
+        
+
+        <div id="new-arrival-wrapper">
+            <div class="contents-title">
+                <span class="category-title">NEW ARRIVAL</span><br>
+                <span class="category-sub-title"> 한 주의 실시간 판매 베스트 상품입니다.</span>
+                <div class="category-menu">
+                    <ul>
+                        <li>전체</li>
+                        <li>상의</li>
+                        <li>하의</li>
+                        <li>세트</li>
+                        <li>신발</li>
+                        <li>액세사리</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="slider-frame">
+            <section class="slider">
+        <ul id="new-arrival-slider" class="cs-hidden">
+          <!-- 1 -->
+          <li class="item-a">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-12.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+          </li>
+          <!-- 2 -->
+          <li class="item-b">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-13.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+          </li>
+          
+          <!-- 3 -->
+          <li class="item-c">
+          <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-14.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+          </li>
+    
+          <!-- 4 -->
+          <li class="item-d">
+             <!-- box-slider -->
+             <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src="images/index/mainimg-15.jpg"></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+    
+          <!-- 5 -->
+          <li class="item-e">
+            <!-- box-slider -->
+            <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          <!-- 6 -->
+          <li class="item-f">
+             <!-- box-slider -->
+             <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          <!-- 7 -->
+          <li class="item-g">
+              <!-- box-slider -->
+              <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          
+                <!-- 8 -->
+          <li class="item-h">
+          <!-- box-slider -->
+          <div class="box">
+            <!-- img-box -->
+            <div class="overlay">
+                <div class="slide-img"><a><img src=""></a></div>
+            </div>
+            <!-- detail-box -->
+            <div class="detail-box">
+            <!-- type -->
+                <div class="type">
+                    <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                    <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                    <div class="prd-price">
+                        <del class="origin-price">69,000원</del>
+                        <strong class="current-price">39,000원 </strong>
+                        <div class="discount-percent">42%</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </li>
+        </ul>
+        </section>
+        </div>
+
+        <div class="slider-frame">
+            <section class="slider">
+        <ul id="new-arrival-slider2" class="cs-hidden">
+          <!-- 1 -->
+          <li class="item-a">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-12.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+          </li>
+          <!-- 2 -->
+          <li class="item-b">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-13.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+          </li>
+          
+          <!-- 3 -->
+          <li class="item-c">
+          <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src="images/index/mainimg-14.jpg"></a></div>
+                    </div>
+                    <!-- detail-box -->
+                    <div class="detail-box">
+                    <!-- type -->
+                        <div class="type">
+                            <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                            <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                            <div class="prd-price">
+                                <del class="origin-price">69,000원</del>
+                                <strong class="current-price">39,000원 </strong>
+                                <div class="discount-percent">42%</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+          </li>
+    
+          <!-- 4 -->
+          <li class="item-d">
+             <!-- box-slider -->
+             <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src="images/index/mainimg-15.jpg"></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+    
+          <!-- 5 -->
+          <li class="item-e">
+            <!-- box-slider -->
+            <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          <!-- 6 -->
+          <li class="item-f">
+             <!-- box-slider -->
+             <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          <!-- 7 -->
+          <li class="item-g">
+              <!-- box-slider -->
+              <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          
+                <!-- 8 -->
+          <li class="item-h">
+          <!-- box-slider -->
+          <div class="box">
+            <!-- img-box -->
+            <div class="overlay">
+                <div class="slide-img"><a><img src=""></a></div>
+            </div>
+            <!-- detail-box -->
+            <div class="detail-box">
+            <!-- type -->
+                <div class="type">
+                    <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                    <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                    <div class="prd-price">
+                        <del class="origin-price">69,000원</del>
+                        <strong class="current-price">39,000원 </strong>
+                        <div class="discount-percent">42%</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </li>
+        </ul>
+        </section>
+    </div>
+
+     <!-- REVIEW -->
+     <div id="review-wrapper">
+        <div class="contents-title">
+            <span class="category-title">REVIEW</span><br>
+            <span class="category-sub-title">베스트 리뷰를 모았습니다.</span>
+        </div>
+
+       <div class="slider-frame">
+            <section class="slider">
+        <ul id="review-slider" class="cs-hidden">
+          <!-- 1 -->
+          <li class="item-a">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <div class="detail-box">
+                        <!-- <img src="images/index/empty-star.png">
+                        <div class="rate">
+                            <button class="review-star"></button>
+                            <button class="review-star"></button>
+                            <button class="review-star"></button>
+                            <button class="review-star"></button>
+                            <button class="review-star"></button>
+                        </div> -->
+                    </div>
+                </div>
+          </li>
+          <!-- 2 -->
+          <li class="item-b">
+                <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                    <div class="detail-box">
+
+                    </div>
+                </div>
+          </li>
+          
+          <!-- 3 -->
+          <li class="item-c">
+          <!-- box-slider -->
+                <div class="box">
+                    <!-- img-box -->
+                    <div class="overlay">
+                        <div class="slide-img"><a><img src=""></a></div>
+                    </div>
+                </div>
+          </li>
+    
+          <!-- 4 -->
+          <li class="item-d">
+             <!-- box-slider -->
+             <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+            </div>
+          </li>
+    
+          <!-- 5 -->
+          <li class="item-e">
+            <!-- box-slider -->
+            <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          <!-- 6 -->
+          <li class="item-f">
+             <!-- box-slider -->
+             <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          <!-- 7 -->
+          <li class="item-g">
+              <!-- box-slider -->
+              <div class="box">
+                <!-- img-box -->
+                <div class="overlay">
+                    <div class="slide-img"><a><img src=""></a></div>
+                </div>
+                <!-- detail-box -->
+                <div class="detail-box">
+                <!-- type -->
+                    <div class="type">
+                        <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                        <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                        <div class="prd-price">
+                            <del class="origin-price">69,000원</del>
+                            <strong class="current-price">39,000원 </strong>
+                            <div class="discount-percent">42%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          </li>
+          
+                <!-- 8 -->
+          <li class="item-h">
+          <!-- box-slider -->
+          <div class="box">
+            <!-- img-box -->
+            <div class="overlay">
+                <div class="slide-img"><a><img src=""></a></div>
+            </div>
+            <!-- detail-box -->
+            <div class="detail-box">
+            <!-- type -->
+                <div class="type">
+                    <span class="brand-name">NIKE <div class="zzim"><button class="btn-zzim" name="btn-zzim"></div></span>
+                    <a href="#" class="prd-name">ENIMM PRAESENT ELEMENTUM</a>
+                    <div class="prd-price">
+                        <del class="origin-price">69,000원</del>
+                        <strong class="current-price">39,000원 </strong>
+                        <div class="discount-percent">42%</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </li>
+        </ul>
+        </section>
+    </div>
 
 <%-- <%@ include file="layout/side_bar.jsp" %> --%>
 <%@ include file="layout/footer.jsp" %>

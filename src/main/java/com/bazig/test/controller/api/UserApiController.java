@@ -1,6 +1,8 @@
 package com.bazig.test.controller.api;
 
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -45,10 +47,10 @@ public class UserApiController {
 	}
 	
 	@PostMapping("/auth/idCheck")
-	public boolean idoverlap(@RequestBody String memberId) { // id 중복 체크 함수
-		System.out.println("UserApiController: idoverlap 호출됨 memberId : " + memberId);
-		System.out.println("중복체크 : " + userService.중복체크(memberId));
-		return userService.중복체크(memberId);
+	public boolean idoverlap(@RequestBody User user) { // id 중복 체크 함수
+		System.out.println("UserApiController: idoverlap 호출됨 memberId : " + user.getMemberId());
+		System.out.println("중복체크 : " + userService.중복체크(user.getMemberId()));
+		return userService.중복체크(user.getMemberId());
 	}
 	
 	@PutMapping("/user")

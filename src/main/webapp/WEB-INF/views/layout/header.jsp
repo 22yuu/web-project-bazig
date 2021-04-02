@@ -19,9 +19,9 @@
 
       
 <!-- stylesheet -->
-<link rel="stylesheet" type="text/css" href="/css/common.css">
+<link rel="stylesheet" type="text/css" href="/css/common01.css">
 <link rel="stylesheet" type="text/css" href="/css/lightslider.css">
-<link rel="stylesheet" type="text/css" href="/css/loginForm.css">
+
 <link rel="stylesheet" type="text/css" href="/css/swiper/swiper-bundle.css" />
 <link rel="stylesheet" type="text/css" href="/css/swiper/swiper-bundle.min.css" />
 
@@ -29,6 +29,7 @@
 <!-- js -->
 <script  type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script  type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/lightslider.js"></script>
@@ -48,65 +49,51 @@ $(document).ready(function(){
 </head>
 <body>
 <div class="app">
-	<!-- Header -->
-		<div id="header">
-			<!-- top-banner -->
-			<div class="top-banner">
-				애드센스
-			</div>
-			<!-- Main logo, search-bar, upper menu -->
-			<div class="frame">
-				<h1 class="main-logo"><a href="/"><img src="/images/logo-bazig.jpg" alt="BAZIG"></a></h1>
-
-	
-				<div class="search-bar-area">
-					<form>
-						<input type="text" name="q" id="search_input" class="search_input">
-						<button class="search_button"> </button>
-					</form>
-				</div>
-				<c:choose>
-					<c:when test="${empty principal || empty principal.user.registed}">
-						<div class="upper-menu-area">
-							<a href="#" target="_blank">베이직소개</a>
-							<a href="#" target="_blank">입점문의</a>
-							<a href="/cart">장바구니</a>
-							<a href="/mypage">마이페이지</a>
-							<a id="login" class="login" data-toggle="modal" data-target="#modal" role="button" href="#">로그인</a>
-						</div>
-					</c:when>
-					<c:otherwise>
-						<div class="upper-menu-area">
-							<a href="#" target="_blank">베이직소개</a>
-							<a href="#" target="_blank">입점문의</a>
-							<a href="/cart">장바구니</a>
-							<a id="mypage" href="/mypage">마이페이지</a>
-							<a id="logout" class="logout" href="/logout">로그아웃</a>
-						</div>
-					</c:otherwise>
-				</c:choose>			
-			</div>
-		</div>
-		
-		<!-- 팝업 로그인 모달 영역 -->
+	    <!-- header -->
+    <div id="header">
+        <div class="top-adv-banner"> 에드센스 </div>
+        <div class="header-frame">
+            <div class="upper-menu">
+                <c:choose>
+                    <c:when test="${empty principal || principal.user.registed eq 0}">
+                        <a href="/auth/bazigInfo">베이지그 소개</a>
+                        <a href="/cart">장바구니</a>
+                        <a href="/mypage">마이페이지</a>
+                        <a id="login" class="login" data-toggle="modal" data-target="#modal" role="button" href="#">로그인</a>
+                        <a href="/auth/joinForm">회원가입</a>
+                    </c:when>
+	                <c:otherwise>
+	                    <a href="/auth/bazigInfo">베이지그 소개</a>
+	                    <a href="/cart">장바구니</a>
+	                    <a href="/mypage">마이페이지</a>
+	                    <a id="logout">로그아웃</a>
+	                </c:otherwise>
+                </c:choose>
+            </div>
+            <div class="top-logo"><a href="#"> <img src="images/logo-bazig.jpg" alt="BAZIG"> </a></div>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a><span>EVENT</span></a></li>
+                    <li><a><span>NEW</span></a></li>
+                    <li><a><span>BEST</span></a></li>
+                    <li><a><span>BRAND</span></a></li>
+                    <li><a><span>LUXURY</span></a></li>
+                    <li><a><span>RAFFLE</span></a></li>
+                </ul>
+            </div>
+            <div class="search-bar-area">
+                <form>
+                    <input type="text" name="q" id="search_input" class="search_input" style="border:none; text-align: center;" placeholder="나이키 테일윈드">
+                    <button class="search_button"> </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 팝업 로그인 모달 영역 -->
 		<div id="modal" class="modal fade" tabindex="-1" role="dialog">
-				<div class="modal-dialog"> 
-					<div class="modal-content">
-					</div> 
-				</div>
-		</div>
-		<!-- nav -->
-		<div id="nav">
-			<ul id="main-nav-wrapper">
-				<li id="nav_home" class="swiper-slide-active"> <a href="/"> <span> 홈 </span> </a></li>
-				<li id="nav_brand" class="swiper-slide-active"> <a href="#"> <span> 브랜드 </span> </a>
-				<li id="nav_shoppingMall" class="swiper-slide-active"> <a href="#"> <span> 쇼핑몰 </span> </a>
-				<li id="nav_life" class="swiper-slide-active"> <a href="#"> <span> 라이프 </span> </a>
-				<li id="nav_highend" class="swiper-slide-active"> <a href="#"> <span> 하이엔드 </span> </a>
-				<li id="nav_exhibitions" class="swiper-slide-active"> <a href="#"> <span> 기획전 </span> </a>
-				<li id="nav_store" class="swiper-slide-active"> <a href="#"> <span> 스토어 </span> </a>
-			</ul>
-		</div>
-		<div id=sub-nav-wrapper> 메인 서브 메뉴</div>
-		<!--  end navigation -->
-	<!-- end header -->
+            <div class="modal-dialog"> 
+                <div class="modal-content">
+                </div> 
+            </div>
+    </div>
+    <!-- header end-->

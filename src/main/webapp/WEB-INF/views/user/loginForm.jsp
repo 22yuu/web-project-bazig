@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
+<%@ include file="../layout/header.jsp" %>
+<link rel="stylesheet" type="text/css" href="/css/loginForm.css">
 <!-- <script type="text/javascript" src="/js/jquery.js"></script> -->
 <script>
 	function login_check() {
@@ -13,7 +13,7 @@
 	}
 
 </script>
-<%@ include file="../layout/header.jsp" %>
+
 
 <div class="container">
 	<div class="loginForm-logo-area"><img src="/images/logo-bazig.jpg"></div>

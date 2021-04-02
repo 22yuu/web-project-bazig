@@ -57,6 +57,10 @@ public class UserController {
 		return "user/modal_loginForm";
 	}
 
+	@GetMapping("/auth/jusoPopup")
+	public String jusoPopup() {
+		return "layout/popup/jusoPopup";
+	}
 	// 카카오 로그인 OAuth2 사용하지 않고 
 //	@GetMapping("/auth/kakao/callback")
 //	public String kakaoCallback(String code) { //@ResponseBody Data를 리턴해주는 컨트롤러 함수

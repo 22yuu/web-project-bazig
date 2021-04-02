@@ -17,7 +17,7 @@
         slideEndAnimation: true,
         pause: 2000,
         keyPress: false,
-        controls: true,
+        controls: false,
         prevHtml: '',
         nextHtml: '',
         rtl: false,
